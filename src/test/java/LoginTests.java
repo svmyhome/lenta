@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class LoginTests extends BaseTest{
+public class LoginTests extends TestBase {
 
 
     @Test

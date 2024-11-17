@@ -3,7 +3,7 @@ import pages.LoginPage;
 import pages.MainPage;
 
 
-public class LoginPageTests extends BaseTest {
+public class LoginPageTests extends TestBase {
     MainPage mainPage = new MainPage();
     LoginPage loginPage = new LoginPage();
 
