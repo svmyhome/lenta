@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","229","LoginTest()","","Wed Nov 20 19:32:37 GMT 2024","broken","Wed Nov 20 19:32:37 GMT 2024","","LoginTests","LoginTests","LoginTest"
+"","33803","submitStudentRegistrationFormTest()","","Wed Nov 20 19:33:38 GMT 2024","broken","Wed Nov 20 19:34:12 GMT 2024","","jenkins.SubmitPracticeFormTest","jenkins.SubmitPracticeFormTest","submitStudentRegistrationFormTest"
+"","4252","Открыть гавную страницу каталога","","Wed Nov 20 19:32:32 GMT 2024","broken","Wed Nov 20 19:32:36 GMT 2024","","Catalog","Catalog","openCatalog"
+"","228","Поиск товара через строку поиска находит товар","","Wed Nov 20 19:32:37 GMT 2024","broken","Wed Nov 20 19:32:37 GMT 2024","","Search","Search","setSearchInput"
+"","232","Выполнен ввод номера телефона кнопка получить код активна","","Wed Nov 20 19:32:36 GMT 2024","broken","Wed Nov 20 19:32:37 GMT 2024","","LoginPageTests","LoginPageTests","LoginTest"
+"","60970","submitStudentRegistrationFormTest()","","Wed Nov 20 19:32:37 GMT 2024","broken","Wed Nov 20 19:33:38 GMT 2024","","jenkins.SubmitPracticeFormRemoteTest","jenkins.SubmitPracticeFormRemoteTest","submitStudentRegistrationFormTest"
