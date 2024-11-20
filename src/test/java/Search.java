@@ -2,6 +2,8 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
+import pages.CatalogPanel;
+import pages.LoginPage;
 import pages.MainPage;
 import pages.SearchPage;
 import org.junit.jupiter.api.Test;
@@ -13,6 +15,9 @@ import static java.lang.Thread.sleep;
 @Owner("sarychev")
 @Tags({@Tag("SEARCH"), @Tag("SMOKE")})
 public class Search extends TestBase {
+
+    MainPage mainPage = new MainPage();;
+    SearchPage searchPage= new SearchPage();
 
     @Test
     @DisplayName("Поиск товара через строку поиска находит товар")

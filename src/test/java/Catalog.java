@@ -5,7 +5,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.CatalogPanel;
+import pages.LoginPage;
 import pages.MainPage;
+import pages.SearchPage;
 
 import static java.lang.Thread.sleep;
 
@@ -14,6 +16,9 @@ import static java.lang.Thread.sleep;
 @Owner("sarychev")
 @Tag("CATALOG")
 public class Catalog extends TestBase {
+
+    MainPage mainPage = new MainPage();;
+    CatalogPanel catalogPanel =new CatalogPanel();;
 
     @Test
     @DisplayName("Открыть гавную страницу каталога")

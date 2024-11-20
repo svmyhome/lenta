@@ -20,24 +20,10 @@ import static io.qameta.allure.Allure.attachment;
 
 public class TestBase {
 
-    MainPage mainPage;
-    LoginPage loginPage;
-    CatalogPanel catalogPanel;
-    SearchPage searchPage;
-
-    public TestBase() {
-        this.mainPage = new MainPage();
-        this.loginPage = new LoginPage();
-        this.catalogPanel = new CatalogPanel();
-        this.searchPage = new SearchPage();
-
-    }
-
-
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1200";
-        Configuration.baseUrl = "https://lenta.com/";
+        Configuration.baseUrl = "https://lenta.com";
         SelenideLogger.addListener("allure", new AllureSelenide());
 
 //        Configuration.pageLoadStrategy = "eager";
