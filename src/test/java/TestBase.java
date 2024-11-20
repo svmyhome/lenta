@@ -23,7 +23,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1200";
-        Configuration.baseUrl = "https://lenta.com";
+        Configuration.baseUrl = "https://lenta.com/";
         SelenideLogger.addListener("allure", new AllureSelenide());
 
 //        Configuration.pageLoadStrategy = "eager";
