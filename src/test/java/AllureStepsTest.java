@@ -19,7 +19,6 @@ public class AllureStepsTest {
     public void lambdaStepsTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-
         step("Открываем главную страницу", () -> {
             open("https://github.com");
             attachment("Source", webdriver().driver().source());
