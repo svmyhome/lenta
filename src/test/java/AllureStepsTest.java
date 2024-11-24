@@ -15,6 +15,8 @@ public class AllureStepsTest {
     private static final String REPOSITORY = "eroshenkoam/allure-example";
     private static final int ISSUE = 92;
 
+
+
     @Test
     public void lambdaStepsTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
