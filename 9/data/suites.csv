@@ -1,2 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","1134","simpleTest()","","Sun Nov 24 08:09:36 GMT 2024","broken","Sun Nov 24 08:09:37 GMT 2024","","SimpleLentaTests","SimpleLentaTests","simpleTest"
