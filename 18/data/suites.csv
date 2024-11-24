@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","10636","Поиск товара через строку поиска находит товар","","Sun Nov 24 10:06:43 GMT 2024","passed","Sun Nov 24 10:06:54 GMT 2024","","Search","Search","setSearchInput"
+"","1947","simpleTest()","","Sun Nov 24 10:06:54 GMT 2024","passed","Sun Nov 24 10:06:56 GMT 2024","","SimpleLenta2Tests","SimpleLenta2Tests","simpleTest"
+"","6804","LoginTest()","","Sun Nov 24 10:06:36 GMT 2024","passed","Sun Nov 24 10:06:43 GMT 2024","","LoginTests","LoginTests","LoginTest"
+"","473","simpleTest()","","Sun Nov 24 10:06:56 GMT 2024","passed","Sun Nov 24 10:06:56 GMT 2024","","SimpleLentaTests","SimpleLentaTests","simpleTest"
+"","12112","Открыть гавную страницу каталога","","Sun Nov 24 10:06:17 GMT 2024","passed","Sun Nov 24 10:06:29 GMT 2024","","Catalog","Catalog","openCatalog"
+"","6906","Выполнен ввод номера телефона кнопка получить код активна","","Sun Nov 24 10:06:29 GMT 2024","passed","Sun Nov 24 10:06:36 GMT 2024","","LoginPageTests","LoginPageTests","LoginTest"
+"","10931","lambdaStepsTest()","","Sun Nov 24 10:06:06 GMT 2024","passed","Sun Nov 24 10:06:17 GMT 2024","","AllureStepsTest","AllureStepsTest","lambdaStepsTest"
