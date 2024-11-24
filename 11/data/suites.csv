@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","245","simpleTest()","","Sun Nov 24 08:23:35 GMT 2024","broken","Sun Nov 24 08:23:35 GMT 2024","","SimpleLentaTests","SimpleLentaTests","simpleTest"
+"","2290","lambdaStepsTest()","","Sun Nov 24 08:23:33 GMT 2024","broken","Sun Nov 24 08:23:35 GMT 2024","","AllureStepsTest","AllureStepsTest","lambdaStepsTest"
