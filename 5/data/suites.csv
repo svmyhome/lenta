@@ -1,5 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","233","Поиск товара через строку поиска находит товар","","Wed Nov 20 05:24:46 GMT 2024","broken","Wed Nov 20 05:24:46 GMT 2024","","Search","Search","setSearchInput"
-"","240","Выполнен ввод номера телефона кнопка получить код активна","","Wed Nov 20 05:24:45 GMT 2024","broken","Wed Nov 20 05:24:45 GMT 2024","","LoginPageTests","LoginPageTests","LoginTest"
-"","233","LoginTest()","","Wed Nov 20 05:24:45 GMT 2024","broken","Wed Nov 20 05:24:46 GMT 2024","","LoginTests","LoginTests","LoginTest"
-"","3967","Открыть гавную страницу каталога","","Wed Nov 20 05:24:41 GMT 2024","broken","Wed Nov 20 05:24:45 GMT 2024","","Catalog","Catalog","openCatalog"
