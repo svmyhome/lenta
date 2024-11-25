@@ -10,10 +10,6 @@ public class SimpleLenta2Tests {
     @Test
     void simpleTest() {
 
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36");
-//        Configuration.browser = "chrome";
-//        Configuration.browserCapabilities = options;
         step("ОТкрыть браузер", () -> {
             open("https://lenta.com//");
         });
