@@ -18,4 +18,5 @@ public class SimpleLenta2Tests {
                 });
         System.out.println();
     }
+
 }
