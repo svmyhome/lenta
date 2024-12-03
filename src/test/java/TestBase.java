@@ -6,10 +6,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.OutputType;
-import pages.CatalogPanel;
-import pages.LoginPage;
-import pages.MainPage;
-import pages.SearchPage;
 
 import java.io.ByteArrayInputStream;
 

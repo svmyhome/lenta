@@ -1,13 +1,9 @@
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.CatalogPanel;
-import pages.LoginPage;
 import pages.MainPage;
-import pages.SearchPage;
 
 import static java.lang.Thread.sleep;
 

@@ -2,11 +2,9 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
-import pages.CatalogPanel;
-import pages.LoginPage;
+import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.SearchPage;
-import org.junit.jupiter.api.Test;
 
 import static java.lang.Thread.sleep;
 
