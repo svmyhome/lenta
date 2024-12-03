@@ -14,7 +14,7 @@ public class LoginPage {
             getCodeButton = $("input[value='Получить код']"),
             phoneInput = $("input[type=tel]");
 
-    @Step("Кликнуть на кноке Войти")
+    @Step("Кликнуть на кнопке Войти")
     public LoginPage clickLoginButton() {
         loginButton.click();
         return this;
