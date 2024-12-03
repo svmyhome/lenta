@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1922","simpleTest()","","Tue Dec 03 17:53:42 GMT 2024","passed","Tue Dec 03 17:53:44 GMT 2024","","SimpleLenta2Tests","SimpleLenta2Tests","simpleTest"
+"","15540","simpleTest()","","Tue Dec 03 17:53:44 GMT 2024","passed","Tue Dec 03 17:53:59 GMT 2024","","SimpleLentaTests","SimpleLentaTests","simpleTest"
+"","10466","lambdaStepsTest()","","Tue Dec 03 17:52:52 GMT 2024","passed","Tue Dec 03 17:53:02 GMT 2024","","AllureStepsTest","AllureStepsTest","lambdaStepsTest"
+"","7134","Выполнен ввод номера телефона кнопка получить код активна","","Tue Dec 03 17:53:14 GMT 2024","passed","Tue Dec 03 17:53:21 GMT 2024","","LoginPageTests","LoginPageTests","LoginTest"
+"","12662","Поиск товара через строку поиска находит товар","","Tue Dec 03 17:53:29 GMT 2024","passed","Tue Dec 03 17:53:42 GMT 2024","","Search","Search","setSearchInput"
+"","7735","LoginTest()","","Tue Dec 03 17:53:21 GMT 2024","passed","Tue Dec 03 17:53:29 GMT 2024","","LoginTests","LoginTests","LoginTest"
+"","11848","Открыть гавную страницу каталога","","Tue Dec 03 17:53:02 GMT 2024","passed","Tue Dec 03 17:53:14 GMT 2024","","Catalog","Catalog","openCatalog"
