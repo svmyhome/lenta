@@ -8,9 +8,16 @@
 plugins {
     id 'java-library'
     id 'io.qameta.allure' version '2.12.0'
+    id("io.freefair.lombok") version "8.11"
 }
 
-def allureVersion = "2.29.0"
+def restAssuredVersion = "5.5.0",
+    allureRestAssured = "2.29.1",
+    allureVersion = "2.29.0",
+    selenideVersion = "7.5.1",
+    appiumVersion = "9.3.0",
+    junitVersion = "5.11.2",
+    slf4jVersion = "2.0.16"
 
 allure {
     report { // секция репора
@@ -38,17 +45,27 @@ compileTestJava {
 
 dependencies {
 
-    testImplementation 'com.codeborne:selenide:7.5.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.2'
-    testImplementation 'com.github.javafaker:javafaker:1.0.2'
-    testImplementation 'org.slf4j:slf4j-simple:2.0.16'
-    testImplementation 'com.codeborne:pdf-test:1.9.1'
-    testImplementation 'com.codeborne:xls-test:1.4.3'
-    testImplementation 'com.opencsv:opencsv:5.9'
-    testImplementation 'com.google.code.gson:gson:2.11.0'
-    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.18.1'
-    testImplementation 'com.fasterxml.jackson.core:jackson-core:2.18.1'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'io.qameta.allure:allure-java-commons:2.14.0'
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.11.2'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.11.2'
+    implementation 'org.junit.jupiter:junit-jupiter-params:5.11.2'
+
+
+    testImplementation "com.codeborne:selenide:$selenideVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    testImplementation "org.slf4j:slf4j-simple:$slf4jVersion"
     testImplementation "io.qameta.allure:allure-selenide:$allureVersion"
+    testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
+    testImplementation "io.rest-assured:json-schema-validator:$restAssuredVersion"
+    testImplementation "io.qameta.allure:allure-rest-assured:$allureRestAssured"
+    testImplementation 'org.aeonbits.owner:owner:1.0.12'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
+    testImplementation 'org.assertj:assertj-core:3.26.3'
+    testImplementation "io.appium:java-client:$appiumVersion"
+
+    testImplementation 'io.qameta.allure:allure-junit5:2.29.1'
+
 
 }
 
@@ -65,20 +82,34 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
 }
 
-task api_tests(type: Test) {
+tasks.register('api_tests', Test) {
+    group = 'Verification'
+    description = 'Runs API tests'
     useJUnitPlatform {
         includeTags("api")
     }
 }
 
-task ui_tests(type: Test) {
+tasks.register('ui_tests', Test) {
+    group = 'Verification'
+    description = 'Runs UI tests'
     useJUnitPlatform {
         includeTags("ui")
     }
 }
 
-task all_tests(type: Test) {
+tasks.register('all_tests', Test) {
+    group = 'Verification'
+    description = 'Runs all tests (API and UI)'
     useJUnitPlatform {
         includeTags("api", "ui")
+    }
+}
+
+tasks.register('android_tests', Test) {
+    group = 'Verification'
+    description = 'Runs Android tests'
+    useJUnitPlatform {
+        includeTags("android")
     }
 }
