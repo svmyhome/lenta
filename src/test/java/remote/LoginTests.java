@@ -13,11 +13,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-
+@Tag("ui")
+@Tags({@Tag("AUTHORIZATION"), @Tag("SMOKE")})
 @Feature("Авторизация")
 @Story("Авторизоваться через кнопку")
 @Owner("sarychev")
-@Tags({@Tag("AUTHORIZATION"), @Tag("SMOKE")})
 public class LoginTests extends TestBaseRemote {
 
 

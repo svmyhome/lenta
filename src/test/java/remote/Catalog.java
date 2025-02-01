@@ -9,10 +9,11 @@ import pages.MainPage;
 
 import static java.lang.Thread.sleep;
 
+@Tag("ui")
+@Tag("CATALOG")
 @Feature("Каталог")
 @Story("Поиск в каталоге")
 @Owner("sarychev")
-@Tag("CATALOG")
 public class Catalog extends TestBaseRemote {
 
     MainPage mainPage = new MainPage();;

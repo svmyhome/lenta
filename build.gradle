@@ -50,14 +50,6 @@ dependencies {
     testImplementation 'com.fasterxml.jackson.core:jackson-core:2.18.1'
     testImplementation "io.qameta.allure:allure-selenide:$allureVersion"
 
-
-//    testImplementation(
-//            'com.codeborne:selenide:7.5.1',
-//            'org.junit.jupiter:junit-jupiter:5.11.2',
-//            'com.github.javafaker:javafaker:1.0.2',
-//            'org.slf4j:slf4j-simple:2.0.16'
-//
-//    )
 }
 
 tasks.withType(Test) {
@@ -73,25 +65,20 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
 }
 
-task simple_test(type: Test) {
+task api_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("SIMPLE")
+        includeTags("api")
     }
 }
 
-task demoqa_test(type: Test) {
+task ui_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("DEMOQA")
+        includeTags("ui")
     }
 }
 
-//tasks.register('test-by-tag', Test) {
-//    useJUnitPlatform {
-//        if (project.hasProperty("includedTags")) {
-//            includeTags(project.properties.get("includedTags").toString())
-//        }
-//        if (project.hasProperty("excludedTags")) {
-//            excludeTags(project.properties.get("excludedT`ags").toString())
-//        }
-//    }
-//}
+task all_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("api", "ui")
+    }
+}

@@ -8,10 +8,11 @@ import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 import pages.MainPage;
 
+@Tag("ui")
+@Tags({@Tag("AUTHORIZATION"), @Tag("SMOKE")})
 @Feature("Авторизация")
 @Story("Авторизоваться через кнопку")
 @Owner("sarychev")
-@Tags({@Tag("AUTHORIZATION"), @Tag("SMOKE")})
 public class LoginPageTests extends TestBaseRemote {
 
     MainPage mainPage = new MainPage();;

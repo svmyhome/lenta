@@ -10,10 +10,11 @@ import pages.SearchPage;
 
 import static java.lang.Thread.sleep;
 
+@Tag("ui")
+@Tags({@Tag("SEARCH"), @Tag("SMOKE")})
 @Feature("Поиск")
 @Story("Поиск через меню поиска")
 @Owner("sarychev")
-@Tags({@Tag("SEARCH"), @Tag("SMOKE")})
 public class Search extends TestBaseRemote {
 
     MainPage mainPage = new MainPage();;
