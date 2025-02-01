@@ -1,3 +1,5 @@
+package remote;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -14,7 +16,7 @@ import static com.codeborne.selenide.Selenide.webdriver;
 import static io.qameta.allure.Allure.addAttachment;
 import static io.qameta.allure.Allure.attachment;
 
-public class TestBase {
+public class TestBaseRemote {
 
     @BeforeAll
     static void beforeAll() {

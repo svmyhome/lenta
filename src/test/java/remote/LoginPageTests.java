@@ -1,3 +1,5 @@
+package remote;
+
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -10,7 +12,7 @@ import pages.MainPage;
 @Story("Авторизоваться через кнопку")
 @Owner("sarychev")
 @Tags({@Tag("AUTHORIZATION"), @Tag("SMOKE")})
-public class LoginPageTests extends TestBase {
+public class LoginPageTests extends TestBaseRemote {
 
     MainPage mainPage = new MainPage();;
     LoginPage loginPage = new LoginPage();;

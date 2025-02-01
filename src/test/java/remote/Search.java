@@ -1,3 +1,5 @@
+package remote;
+
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -12,7 +14,7 @@ import static java.lang.Thread.sleep;
 @Story("Поиск через меню поиска")
 @Owner("sarychev")
 @Tags({@Tag("SEARCH"), @Tag("SMOKE")})
-public class Search extends TestBase {
+public class Search extends TestBaseRemote {
 
     MainPage mainPage = new MainPage();;
     SearchPage searchPage= new SearchPage();
