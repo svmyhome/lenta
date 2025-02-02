@@ -56,7 +56,7 @@ public class LocalDriver implements WebDriverProvider {
         return new AndroidDriver(getLocalUrl(), androidOptions);
     }
 
-    private void setLocation(double latitude, double longitude) {
+    public void setLocation(double latitude, double longitude) {
         try {
             // Формируем команду adb для установки местоположения
             String command = String.format("adb -s emulator-5554 emu geo fix %f %f", longitude, latitude);

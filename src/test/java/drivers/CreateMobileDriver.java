@@ -12,8 +12,7 @@ import javax.annotation.Nonnull;
 import java.time.LocalDateTime;
 
 import static helpers.BrowserstackHelper.getBrowserstackUrl;
-import static helpers.LocalHelper.getAppPath;
-import static helpers.LocalHelper.getLocalUrl;
+import static helpers.LocalHelper.*;
 import static helpers.ProjectSettings.ProjectConfiguration.projectConfig;
 import static helpers.ProjectSettings.isAndroid;
 import static helpers.ProjectSettings.isBrowserStackDevice;
@@ -53,6 +52,7 @@ public class CreateMobileDriver implements WebDriverProvider {
             androidOptions.setApp(getAppPath());
             androidOptions.setAppPackage(androidConfig.getAppPackage());
             androidOptions.setAppActivity(androidConfig.getAppActivity());
+            setLocation(59.939476, 30.436496);
             return new AndroidDriver(getLocalUrl(), androidOptions);
         }
 

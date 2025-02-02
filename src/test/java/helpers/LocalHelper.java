@@ -31,4 +31,16 @@ public class LocalHelper {
 //        }
         return app.getAbsolutePath();
     }
+
+    public static void setLocation(double latitude, double longitude) {
+        try {
+            // Формируем команду adb для установки местоположения
+            String command = String.format("adb -s emulator-5554 emu geo fix %f %f", longitude, latitude);
+            Process process = Runtime.getRuntime().exec(command);
+            process.waitFor(); // Ожидаем завершения команды
+            System.out.println("Location set to: Latitude=" + latitude + ", Longitude=" + longitude);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
