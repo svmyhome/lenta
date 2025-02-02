@@ -27,7 +27,7 @@ import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.xpath;
 
-@Tag("android")
+
 public class AndroidTest extends TestBaseLocal{
     @Test
     public void WikipediaTest() throws MalformedURLException, InterruptedException {
@@ -103,7 +103,7 @@ public class AndroidTest extends TestBaseLocal{
 
     }
 
-
+    @Tag("android")
     @Test
     public void LentaTest() throws InterruptedException {
         $(id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")).click();

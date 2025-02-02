@@ -2,6 +2,7 @@ package mobile;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import drivers.CreateMobileDriver;
 import drivers.LocalDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -15,7 +16,10 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestBaseLocal {
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = LocalDriver.class.getName();
+//        Configuration.browser = LocalDriver.class.getName();
+//        Configuration.browserSize = null;
+//        Configuration.timeout = 30000;
+        Configuration.browser = CreateMobileDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
     }
