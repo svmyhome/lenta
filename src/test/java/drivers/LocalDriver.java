@@ -44,17 +44,29 @@ public class LocalDriver implements WebDriverProvider {
 //        androidOptions.setPlatformVersion("14.0"); // puro
 //        androidOptions.setUdid("2FK0224429007348");
         androidOptions.setPlatformVersion("11.0");
-        androidOptions.setUdid("V4CEBEEANB498D6D");
+//        androidOptions.setUdid("V4CEBEEANB498D6D"); //local
+        androidOptions.setUdid("emulator-5554"); // Studio
         androidOptions.setApp(getAppPath());
 //        androidOptions.setAppPackage("org.wikipedia.alpha");
 //        androidOptions.setAppActivity("org.wikipedia.main.MainActivity");
         androidOptions.setAppPackage("com.icemobile.lenta.stage.qa");
         androidOptions.setAppActivity("ru.app.main.MainActivity");
+        setLocation(59.939476, 30.436496);
 
         return new AndroidDriver(getLocalUrl(), androidOptions);
     }
 
-
+    private void setLocation(double latitude, double longitude) {
+        try {
+            // Формируем команду adb для установки местоположения
+            String command = String.format("adb -s emulator-5554 emu geo fix %f %f", longitude, latitude);
+            Process process = Runtime.getRuntime().exec(command);
+            process.waitFor(); // Ожидаем завершения команды
+            System.out.println("Location set to: Latitude=" + latitude + ", Longitude=" + longitude);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

@@ -15,8 +15,7 @@ import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.partialText;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static helpers.LocalHelper.getAppPath;
@@ -100,15 +99,15 @@ public class AndroidTest extends TestBaseLocal{
 //                "android.widget.TextView"));
 //        assert (allProductsName.size() > 0);
 
-
         driver.quit();
 
     }
 
 
     @Test
-    public void LentaTest() throws MalformedURLException, InterruptedException {
+    public void LentaTest() throws InterruptedException {
         $(id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")).click();
+        Thread.sleep(5000);
         $(id("SearchText")).click();
         $(id("TitleCenter")).click();
         $(id("AvailableAddressText")).shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
