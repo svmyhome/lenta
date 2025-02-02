@@ -3,8 +3,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import pages.MainPage;
-import pages.SearchPage;
+import models.pages.MainPage;
+import models.pages.SearchPage;
 
 import static java.lang.Thread.sleep;
 
