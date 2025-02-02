@@ -26,6 +26,7 @@ import static io.appium.java_client.AppiumBy.id;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static io.qameta.allure.Allure.step;
+import static org.openqa.selenium.By.xpath;
 
 @Tag("android")
 public class AndroidTest extends TestBaseLocal{
@@ -107,32 +108,10 @@ public class AndroidTest extends TestBaseLocal{
 
     @Test
     public void LentaTest() throws MalformedURLException, InterruptedException {
-
-//        UiAutomator2Options options = new UiAutomator2Options();
-////        options.setDeviceName(androidConfig.getDeviceName());
-//        options.setPlatformVersion("14.0");
-//        options.setAutomationName(ANDROID_UIAUTOMATOR2);
-//        options.setPlatformName(ANDROID);
-//        options.setUdid("2FK0224429007348");
-//        options.setApp(getAppPath());
-//        options.setAppPackage("com.icemobile.lenta.stage.qa");
-//        options.setAppActivity("ru.app.main.MainActivity");
-
-//        options.setCapability("appium:app", "bs://sample.app");
-//        options.setCapability("appium:deviceName", "Samsung Galaxy S22 Ultra");
-//        options.setCapability("appium:platformVersion", "12.0");
-//        options.setCapability("project", "First Java Project");
-//        options.setCapability("build", "browserstack-build-1");
-//        options.setCapability("name", "first_test");
-
-
-//        AndroidDriver driver = new AndroidDriver(getLocalUrl(), options);
-
         $(id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")).click();
-        System.out.println();
-
-
-
+        $(id("SearchText")).click();
+        $(id("TitleCenter")).click();
+        $(id("AvailableAddressText")).shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
     }
 
 

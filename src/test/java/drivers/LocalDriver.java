@@ -39,9 +39,12 @@ public class LocalDriver implements WebDriverProvider {
         androidOptions = new UiAutomator2Options();
         androidOptions.setAutomationName(ANDROID_UIAUTOMATOR2);
         androidOptions.setPlatformName(ANDROID);
-        androidOptions.setPlatformVersion("14.0");
+        androidOptions.setCapability("disableIdLocatorAutocompletion", true);
 //        androidOptions.setDeviceName("Pixel_3a_API_34_extension_level_7_arm64");
-        androidOptions.setUdid("2FK0224429007348");
+//        androidOptions.setPlatformVersion("14.0"); // puro
+//        androidOptions.setUdid("2FK0224429007348");
+        androidOptions.setPlatformVersion("11.0");
+        androidOptions.setUdid("V4CEBEEANB498D6D");
         androidOptions.setApp(getAppPath());
 //        androidOptions.setAppPackage("org.wikipedia.alpha");
 //        androidOptions.setAppActivity("org.wikipedia.main.MainActivity");
