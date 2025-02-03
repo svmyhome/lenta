@@ -1,4 +1,4 @@
-package mobile;
+package tests.mobile;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -25,7 +25,6 @@ import static io.appium.java_client.AppiumBy.id;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static io.qameta.allure.Allure.step;
-import static org.openqa.selenium.By.xpath;
 
 
 public class AndroidTest extends TestBaseLocal{
