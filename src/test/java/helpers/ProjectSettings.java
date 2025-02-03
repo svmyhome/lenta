@@ -6,11 +6,16 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class ProjectSettings {
 
+    public static final String platform = System.getProperty("platform", "web");
+    public static final boolean isWeb = platform.equals("web");
+
+    public static final String environmentType = System.getProperty("environmentType", "local");
+    public static final boolean isRemoteStartWeb = environmentType.equals("remote");
+
+    public static final String mobileOS = System.getProperty("platform", "android");
     public static final String deviceHost = System.getProperty("deviceHost", "real");
     public static final boolean isBrowserStackDevice = "browserstack".equals(deviceHost);
-
-    public static final String platform = System.getProperty("platform", "android");
-    public static final boolean isAndroid = platform.equals("android");
+    public static final boolean isAndroid = mobileOS.equals("android");
 
     public static class Credentials {
         static AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());

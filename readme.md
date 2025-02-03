@@ -1,11 +1,23 @@
 
 ### Запуск
 
-#### Локально
+#### Локально Web
 ```
-gradle android -DdeviceHost=real -Dplatform=android -Ddevice=redmi9A
+gradle clean ui
+gradle clean ui -DenvironmentType=local
 ```
-#### Удаленно
+#### Удаленно Web
 ```
-gradle android -DdeviceHost=emulation -Dplatform=android -Ddevice=pixel4
+gradle clean ui -DenvironmentType=remote
+```
+
+
+
+#### Локально Мобилка
+```
+gradle android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
+```
+#### Удаленно Мобилка
+```
+gradle android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
 ```

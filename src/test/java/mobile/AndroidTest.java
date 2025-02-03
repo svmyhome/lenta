@@ -46,7 +46,7 @@ public class AndroidTest extends TestBaseLocal{
 
         WebElement searchElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
                 ExpectedConditions.elementToBeClickable(
-                        AppiumBy.accessibilityId("Search Wikipedia")));
+                        AppiumBy.accessibilityId("tests.ui.Search Wikipedia")));
         searchElement.click();
         WebElement insertTextElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
                 ExpectedConditions.elementToBeClickable(
@@ -88,7 +88,7 @@ public class AndroidTest extends TestBaseLocal{
         System.out.println();
 //        WebElement searchElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 //                ExpectedConditions.elementToBeClickable(
-//                        AppiumBy.accessibilityId("Search Wikipedia")));
+//                        AppiumBy.accessibilityId("tests.ui.Search Wikipedia")));
 //        searchElement.click();
 //        WebElement insertTextElement = (WebElement) new WebDriverWait(driver, Duration.ofSeconds(30)).until(
 //                ExpectedConditions.elementToBeClickable(
@@ -132,7 +132,7 @@ public class AndroidTest extends TestBaseLocal{
 
 
         step("Type search", () -> {
-            $(accessibilityId("Search Wikipedia")).click();
+            $(accessibilityId("tests.ui.Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Ubuntu");
         });
         step("Verify content found", () ->

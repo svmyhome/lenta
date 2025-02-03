@@ -12,4 +12,10 @@ public interface AuthConfig extends Config {
 
     @Key("passwordBrowserStack")
     String getPassword();
+
+    @Key("selenoidUser")
+    String selenoidUser();
+
+    @Key("selenoindPassword")
+    String selenoindPassword();
 }

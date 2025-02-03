@@ -1,4 +1,4 @@
-package remote;
+package tests.ui;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
@@ -6,15 +6,16 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import models.pages.CatalogPanel;
 import models.pages.MainPage;
+import tests.TestBase;
 
 import static java.lang.Thread.sleep;
 
-@Tag("ui")
-@Tag("CATALOG")
 @Feature("Каталог")
 @Story("Поиск в каталоге")
 @Owner("sarychev")
-public class Catalog extends TestBaseRemote {
+@Tag("CATALOG")
+@Tag("ui")
+public class Catalog extends TestBase {
 
     MainPage mainPage = new MainPage();;
     CatalogPanel catalogPanel =new CatalogPanel();;
