@@ -13,11 +13,15 @@ gradle clean ui -DenvironmentType=remote
 
 
 
-#### Локально Мобилка
+#### Реальная Мобилка
 ```
 gradle android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
 ```
-#### Удаленно Мобилка
+#### Эмулятор Мобилка
 ```
 gradle android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
+```
+#### BrowserStack Мобилка
+```
+gradle android -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro
 ```
