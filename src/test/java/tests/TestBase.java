@@ -10,14 +10,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.screenshot;
-import static drivers.CreateWebDriver.localWebDriverConfig;
-import static drivers.CreateWebDriver.remoteWebDriverConfig;
-import static drivers.CreateWebDriver1.webDriverConfig;
+import static drivers.CreateWebDriver.webDriverConfig;
 import static helpers.ProjectSettings.isRemoteStartWeb;
 import static helpers.ProjectSettings.isWeb;
-import static io.qameta.allure.Allure.addAttachment;
-import static io.qameta.allure.Allure.attachment;
 
 public class TestBase {
 
