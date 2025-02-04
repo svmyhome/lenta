@@ -11,10 +11,9 @@ gradle clean ui -DenvironmentType=local
 gradle clean ui -DenvironmentType=remote
 ```
 
-
-
 #### Реальная Мобилка
 ```
+gradle android -DdeviceHost=real -DmobileOS=android
 gradle android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
 ```
 #### Эмулятор Мобилка

@@ -6,10 +6,7 @@ import org.aeonbits.owner.Config;
         "classpath:config/local/android/${device}.properties",
         "classpath:config/emulation/android/${device}.properties",
         "classpath:config/browserstack/android/${device}.properties",
-        "classpath:config/local/android/redmi9A.properties",
-        "classpath:config/emulation/android/pixel4.properties",
-        "classpath:config/browserstack/android/onePlus9.properties",
-        "classpath:config/browserstack/android/samsungS22Ultra.properties"
+        "classpath:config/local/android/redmi9A.properties"
 })
 public interface DeviceAndroidConfig extends Config {
     @Key("android.app")
