@@ -12,6 +12,9 @@ public interface DeviceAndroidConfig extends Config {
     @Key("android.app")
     String getApp();
 
+    @Key("android.localUrl")
+    String getLocalUrl();
+
     @Key("android.deviceName")
     String getDeviceName();
 

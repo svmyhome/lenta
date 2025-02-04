@@ -3,12 +3,12 @@
 
 #### Локально Web
 ```
-gradle clean ui
-gradle clean ui -DenvironmentType=local
+gradle clean ui -Dplatform=web
+gradle clean ui -DenvironmentType=local -Dplatform=web
 ```
 #### Удаленно Web
 ```
-gradle clean ui -DenvironmentType=remote
+gradle clean ui -DenvironmentType=remote -Dplatform=web
 ```
 
 #### Реальная Мобилка

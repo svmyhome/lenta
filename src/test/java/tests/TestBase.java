@@ -10,9 +10,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+import static com.codeborne.selenide.Selenide.open;
 import static drivers.CreateWebDriver.webDriverConfig;
-import static helpers.ProjectSettings.isRemoteStartWeb;
-import static helpers.ProjectSettings.isWeb;
+import static helpers.ProjectSettings.*;
 
 public class TestBase {
 
@@ -32,13 +32,19 @@ public class TestBase {
     @BeforeEach
     public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        if(isMobile) {
+            open();
+        }
+
     }
 
     @AfterEach
     void afterEach() {
         Attach.screenshotAs("Финальный скриншот");
         Attach.pageSource();
-        Attach.browserConsoleLogs();
+        if(isWeb) {
+            Attach.browserConsoleLogs();
+        }
         if (isRemoteStartWeb) {
             Attach.addVideo();
         }
