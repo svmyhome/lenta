@@ -10,6 +10,7 @@ public class MainPage {
 
     public static final SelenideElement catalog = $(".header__top .catalog-button");
     public static final SelenideElement searchInput = $("#header-search-input");
+    public static final SelenideElement closeToolTip = $("[aria-label=\"Закрыть\"]");
 
     @Step("Открыта главная страница")
     public MainPage openMainPage() {
@@ -26,6 +27,12 @@ public class MainPage {
     @Step("Открыт поиск")
     public MainPage openSearch() {
         searchInput.click();
+        return this;
+    }
+
+    @Step("Закрыт выбор магазина")
+    public MainPage closeToolTip() {
+        closeToolTip.click();
         return this;
     }
 

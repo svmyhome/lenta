@@ -12,13 +12,13 @@ public class CatalogPanel {
     public static final ElementsCollection mainCat = $$("[automation-id=mainCat]");
     public static final SelenideElement catalogTitle = $("div h1");
 
-    @Step("Открыть главную страницу каталога {value}")
+    @Step("Открыта главная страница каталога {value}")
     public CatalogPanel clickMainCat(String value) {
         mainCat.filterBy(text(value)).first().click();
         return this;
     }
 
-    @Step("Товар {value} найден")
+    @Step("Каталог {value} открыт")
     public CatalogPanel shouldCatalog(String value) {
         catalogTitle.shouldHave(text(value));
         return this;

@@ -16,7 +16,7 @@ import static java.lang.Thread.sleep;
 @Owner("sarychev")
 @Tags({@Tag("SEARCH"), @Tag("SMOKE")})
 @Tag("ui")
-public class Search extends TestBase {
+public class SearchTests extends TestBase {
 
     MainPage mainPage = new MainPage();;
     SearchPage searchPage= new SearchPage();
@@ -24,11 +24,11 @@ public class Search extends TestBase {
     @Test
     @DisplayName("Поиск товара через строку поиска находит товар")
     @Severity(SeverityLevel.BLOCKER)
-    void setSearchInput() throws InterruptedException {
-        mainPage.openMainPage();
-        sleep(5000);
-        mainPage.openSearch().fillItemSearchEnter("молоко");
+    void setSearchInput(){
+        mainPage.openMainPage()
+                .closeToolTip();
+        mainPage.openSearch()
+                .fillItemSearchEnter("молоко");
         searchPage.getTitle("молоко");
-        System.out.println();
     }
 }

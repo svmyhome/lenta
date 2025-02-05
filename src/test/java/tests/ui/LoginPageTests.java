@@ -10,25 +10,51 @@ import models.pages.MainPage;
 import tests.TestBase;
 
 @Feature("Авторизация")
-@Story("Авторизоваться через кнопку")
+@Story("Пользователь может авторизоваться через кнопку 'Войти'")
 @Owner("sarychev")
 @Tags({@Tag("AUTHORIZATION"), @Tag("SMOKE")})
 @Tag("ui")
+@DisplayName("Авторизация через номер телефона")
 public class LoginPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();;
     LoginPage loginPage = new LoginPage();;
 
     @Test
-    @DisplayName("Выполнен ввод номера телефона кнопка получить код активна")
+    @DisplayName("Кнопка 'Получить код' не активна до ввода номера телефона")
     @Severity(SeverityLevel.BLOCKER)
-    void LoginTest() {
-        mainPage.openMainPage();
-        loginPage.clickLoginButton()
+    void codeButtonDisabledBeforeTypePhoneTest() {
+        mainPage.openMainPage()
+                .closeToolTip();
+        loginPage.clickOnLoginButton()
                 .shouldAuthorizationWindowOpen()
-                .shouldCodeButtonDisable()
+                .shouldCodeButtonDisable();
+    }
+
+
+    @Test
+    @DisplayName("Кнопка 'Получить код' активна после ввода номера телефона")
+    @Severity(SeverityLevel.BLOCKER)
+    void codeButtonEnabledAfterTypePhoneTest() {
+        mainPage.openMainPage()
+                .closeToolTip();
+        loginPage.clickOnLoginButton()
                 .setPhoneNumber()
                 .shouldCodeButtonEnable();
-
     }
+
+
+    @Test
+    @DisplayName("Окно 'Введите код' открыто")
+    @Severity(SeverityLevel.BLOCKER)
+    void enterCodeWindowOpenTest() {
+        mainPage.openMainPage()
+                .closeToolTip();
+        loginPage.clickOnLoginButton()
+                .setPhoneNumber()
+                .shouldCodeButtonEnable();
+        //TODO
+    }
+
+
 }

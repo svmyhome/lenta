@@ -15,12 +15,12 @@ public class LoginPage {
             phoneInput = $("input[type=tel]");
 
     @Step("Кликнуть на кнопке Войти")
-    public LoginPage clickLoginButton() {
+    public LoginPage clickOnLoginButton() {
         loginButton.click();
         return this;
     }
 
-    @Step("Окно Войти или зарегистрироваться появилось")
+    @Step("Окно Войти или зарегистрироваться отображается")
     public LoginPage shouldAuthorizationWindowOpen() {
         authorizationWindow.shouldHave(text("Войти или зарегистрироваться"));
         return this;
@@ -32,7 +32,7 @@ public class LoginPage {
         return this;
     }
 
-    @Step("Введен номер телефона")
+    @Step("Ввести номер телефона")
     public LoginPage setPhoneNumber() {
         phoneInput.setValue("9535006559");
         return this;
