@@ -2,29 +2,27 @@ package tests.api;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.Step;
 import io.qameta.allure.Story;
-import io.qameta.allure.restassured.AllureRestAssured;
-import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import models.api.deliveryModeGet.DeliveryRequest;
 import models.api.deliveryModeGet.response.Delivery;
 import models.api.requestCatalogItems.CatalogItemsResponse;
 import models.api.requestCatalogItems.Filters;
 import models.api.requestCatalogItems.Sort;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
 import java.util.List;
 import java.util.Map;
 
-import static helpers.CustomAllureListener.withCustomTemplates;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.is;
+import static specs.StoresSpers.requestSpec;
+import static specs.StoresSpers.successResponse;
 
 
 @Slf4j
@@ -33,7 +31,7 @@ import static org.hamcrest.Matchers.is;
 @Owner("Sarychev")
 @Tag("api")
 @DisplayName("Получить информацию о магазине")
-public class StoresTests {
+public class StoresTests extends TestBase {
 
 //    @Test
 //    public void getListStoresTest() {
@@ -47,7 +45,7 @@ public class StoresTests {
     @Test
     public void getListStoresTest() {
         given().log().all()
-                .get("https://lenta.com/api/v1/stores")
+                .get("/api/v1/stores")
                 .then()
                 .log().all()
                 .statusCode(200);
@@ -56,7 +54,7 @@ public class StoresTests {
     @Test
     public void getStoreTest() {
         given().log().all()
-                .get("https://lenta.com/api/v1/stores/0067")
+                .get("/api/v1/stores/0067")
                 .then()
                 .log().all()
                 .statusCode(200);
@@ -106,31 +104,15 @@ public class StoresTests {
 
     @Test
     public void deliveryModeGet() {
-        Map<String, String> headers = Map.of(
-                "Content-Type", "application/json",
-                "DeviceID", "ff86f8dd-7154-f591-199c-19fecb138aac",
-                "SessionToken", "3849FACA09F05B077ADF56894288E40A1",
-                "X-Domain", "moscow",
-                "X-Organization-ID", "", // Пустое значение
-                "X-Platform", "omniweb",
-                "X-Retail-Brand", "lo"
-        );
-
         // {"method":"deliveryModeGet","params":{},"jsonrpc":"2.0","id":"deliveryModeGet_1daa977f820b6"}
 
         DeliveryRequest deliveryRequest = new DeliveryRequest("deliveryModeGet", null, "2.0", "deliveryModeGet_1daa977f820b6");
 
-        Delivery response = step("Make request", () -> given()
-                .filter(withCustomTemplates())
-                .log().uri()
-                .log().headers()
-                .log().body()
-                .headers(headers)
+        Delivery response = step("Make request", () -> given(requestSpec)
                 .when().body(deliveryRequest)
-                .post("https://lenta.com/jrpc/deliveryModeGet")
+                .post("/jrpc/deliveryModeGet")
                 .then()
-                .log().all()
-                .statusCode(200).extract().as(Delivery.class));
+                .spec(successResponse).extract().as(Delivery.class));
 
         step("Verify", () -> {
             assertThat(response.jsonrpc()).isEqualTo("2.0");

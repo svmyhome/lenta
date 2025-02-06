@@ -9,6 +9,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 
 import static com.codeborne.selenide.Selenide.open;
 import static drivers.CreateWebDriver.webDriverConfig;
@@ -39,11 +40,13 @@ public class TestBase {
     }
 
     @AfterEach
-    void afterEach() {
-        Attach.screenshotAs("Финальный скриншот");
-        Attach.pageSource();
-        if(isWeb) {
-            Attach.browserConsoleLogs();
+    void afterEach(TestInfo testInfo) {
+        if (!testInfo.getTags().contains("api")) {
+            Attach.screenshotAs("Финальный скриншот");
+            Attach.pageSource();
+            if (isWeb) {
+                Attach.browserConsoleLogs();
+            }
         }
         if (isRemoteStartWeb) {
             Attach.addVideo();

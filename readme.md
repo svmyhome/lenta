@@ -24,3 +24,9 @@ gradle android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
 ```
 gradle android -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro
 ```
+#### Запуск Апи локально
+```
+gradle clean api -DenvironmentType=local -Dplatform=web
+gradle clean api -DenvironmentType=local -Dplatform=remote
+
+```
