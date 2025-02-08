@@ -9,6 +9,12 @@
 - [ ] Дописать автотесты по Mobile
 - [ ] Сделать скриншоты и описание
 
+### Jenkins Job
+
+```
+https://jenkins.autotests.cloud/job/QaLenta/
+```
+
 
 ### Запуск
 

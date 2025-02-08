@@ -47,9 +47,9 @@ public class TestBase {
             if (isWeb) {
                 Attach.browserConsoleLogs();
             }
-        }
-        if (isRemoteStartWeb) {
-            Attach.addVideo();
+            if (isRemoteStartWeb) {
+                Attach.addVideo();
+            }
         }
         Selenide.closeWebDriver();
     }
