@@ -40,17 +40,19 @@ public class TestBase {
     }
 
     @AfterEach
-    void afterEach(TestInfo testInfo) {
+    public void afterEach(TestInfo testInfo) {
         if (!testInfo.getTags().contains("api")) {
             Attach.screenshotAs("Финальный скриншот");
             Attach.pageSource();
             if (isWeb) {
                 Attach.browserConsoleLogs();
-            }
-            if (isRemoteStartWeb) {
-                Attach.addVideo();
+                if (isRemoteStartWeb) {
+                    Attach.addVideo();
+                }
             }
         }
-        Selenide.closeWebDriver();
+        if (isBrowserStackDevice) {
+            Attach.addVideoSelenoid(Selenide.sessionId().toString());
+        }
     }
 }
