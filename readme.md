@@ -1,13 +1,20 @@
 
 ## TODO
 
-- [ ] Запуск в Jenkins 
-- [ ] Подключить telegramm
-- [ ] Подключить аллюр
+- [X] Запуск в Jenkins
+    - [ ] переделать на paip
+- [X] Подключить аллюр
+- [X] Подключить telegramm
 - [ ] Дописать автотесты по UI
 - [ ] Дописать автотетсы по АПИ
 - [ ] Дописать автотесты по Mobile
 - [ ] Сделать скриншоты и описание
+
+### Jenkins Job
+
+```
+https://jenkins.autotests.cloud/job/QaLenta/
+```
 
 
 ### Запуск
@@ -28,14 +35,14 @@ gradle clean api -DenvironmentType=local -Dplatform=remote
 ```
 #### Реальная Мобилка
 ```
-gradle android -DdeviceHost=real -DmobileOS=android
-gradle android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
+gradle clean android -DdeviceHost=real -DmobileOS=android
+gradle clean android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
 ```
 #### Эмулятор Мобилка
 ```
-gradle android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
+gradle clean android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
 ```
 #### BrowserStack Мобилка
 ```
-gradle android -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro
+gradle clean android -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro
 ```

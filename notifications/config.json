@@ -1,0 +1,19 @@
+{
+  "base": {
+    "logo": "src/test/resources/images/img.png",
+    "project": "${JOB_BASE_NAME}",
+    "environment": "${ENVIRONMENT}",
+    "comment": "some comment",
+    "reportLink": "${BUILD_URL}",
+    "language": "ru",
+    "allureFolder": "allure-report",
+    "enableChart": true,
+    "enableSuitesPublishing": true,
+    "durationFormat": "HH:mm:ss.SSS"
+  },
+  "telegram": {
+    "token": "7580071521:AAENmusu-RR8tl_ZJDFPNgeDKlEwdH2YktI",
+    "chat": "-1002084287772",
+    "replyTo": ""
+  }
+}

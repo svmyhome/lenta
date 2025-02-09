@@ -27,7 +27,7 @@ import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static io.qameta.allure.Allure.step;
 
-
+@Tag("android")
 public class AndroidTest extends TestBase{
 //    @Test
 //    public void WikipediaTest() throws MalformedURLException, InterruptedException {
