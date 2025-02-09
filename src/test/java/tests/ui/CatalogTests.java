@@ -18,7 +18,7 @@ import static helpers.Constants.CatalogItems.*;
 @DisplayName("Работа с каталогом")
 public class CatalogTests extends TestBase {
 
-    MainPage mainPage = new MainPage();;
+    MainPage mainPage = new MainPage();
     CatalogPanel catalogPanel =new CatalogPanel();
 
     @Test
@@ -35,13 +35,13 @@ public class CatalogTests extends TestBase {
 
     @Test
     @DisplayName("Переход в каталог 2-го уровня " + CATALOG_DRINKS)
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.NORMAL)
     void openCatalogSecondLevelTest(){
         mainPage.openMainPage()
                 .closeToolTip();
         mainPage.openCatalog();
-        catalogPanel.hoverOnCatalog(CATALOG_NEW_PRODUCTS);
-        catalogPanel.openSecondLevelCatalog(CATALOG_SKU_DRINKS);
-        catalogPanel.shouldSecondLevelCatalog(CATALOG_DRINKS);
+        catalogPanel.hoverOnCatalog(CATALOG_NEW_PRODUCTS)
+                .openSecondLevelCatalog(CATALOG_SKU_DRINKS)
+                .shouldSecondLevelCatalog(CATALOG_DRINKS);
     }
 }

@@ -17,12 +17,12 @@ import tests.TestBase;
 @DisplayName("Авторизация через номер телефона")
 public class LoginPageTests extends TestBase {
 
-    MainPage mainPage = new MainPage();;
-    LoginPage loginPage = new LoginPage();;
+    MainPage mainPage = new MainPage();
+    LoginPage loginPage = new LoginPage();
 
     @Test
     @DisplayName("Кнопка 'Получить код' не активна до ввода номера телефона")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     void codeButtonDisabledBeforeTypePhoneTest() {
         mainPage.openMainPage()
                 .closeToolTip();
@@ -30,7 +30,6 @@ public class LoginPageTests extends TestBase {
                 .shouldAuthorizationWindowOpen()
                 .shouldCodeButtonDisable();
     }
-
 
     @Test
     @DisplayName("Кнопка 'Получить код' активна после ввода номера телефона")
@@ -42,7 +41,6 @@ public class LoginPageTests extends TestBase {
                 .setPhoneNumber()
                 .shouldCodeButtonEnable();
     }
-
 
     @Test
     @DisplayName("Окно 'Введите код' открыто")
