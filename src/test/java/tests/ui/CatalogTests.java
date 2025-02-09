@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-import static helpers.Constants.CatalogItems.CATALOG_NEW_PRODUCTS;
+import static helpers.Constants.CatalogItems.*;
 
 @Feature("Каталог")
 @Story("Пользователь может работать с каталогом товаров")
@@ -22,13 +22,26 @@ public class CatalogTests extends TestBase {
     CatalogPanel catalogPanel =new CatalogPanel();
 
     @Test
-    @DisplayName("Переход в пункт каталога " + CATALOG_NEW_PRODUCTS)
+    @DisplayName("Переход в каталог 1-го уровня " + CATALOG_NEW_PRODUCTS)
     @Severity(SeverityLevel.BLOCKER)
-    void openCatalog(){
+    void openCatalogTest(){
         mainPage.openMainPage()
                 .closeToolTip();
         mainPage.openCatalog();
-        catalogPanel.clickMainCat(CATALOG_NEW_PRODUCTS)
-                .shouldCatalog(CATALOG_NEW_PRODUCTS);
+        catalogPanel.openFirstLevelCatalog(CATALOG_NEW_PRODUCTS)
+                .shouldFirstLevelCatalog(CATALOG_NEW_PRODUCTS);
+    }
+
+
+    @Test
+    @DisplayName("Переход в каталог 2-го уровня " + CATALOG_DRINKS)
+    @Severity(SeverityLevel.BLOCKER)
+    void openCatalogSecondLevelTest(){
+        mainPage.openMainPage()
+                .closeToolTip();
+        mainPage.openCatalog();
+        catalogPanel.hoverOnCatalog(CATALOG_NEW_PRODUCTS);
+        catalogPanel.openSecondLevelCatalog(CATALOG_SKU_DRINKS);
+        catalogPanel.shouldSecondLevelCatalog(CATALOG_DRINKS);
     }
 }
