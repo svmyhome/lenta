@@ -25,7 +25,7 @@ public class SearchTests extends TestBase {
 
     @Test
     @DisplayName("Поиск товара через строку поиска находит товар")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     void setSearchInput(){
         mainPage.openMainPage()
                 .closeToolTip();
