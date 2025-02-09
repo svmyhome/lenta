@@ -44,8 +44,10 @@ public class CreateMobileDriver implements WebDriverProvider {
             androidOptions.setCapability("project", projectConfig.getProjectName());
             androidOptions.setCapability("build", projectConfig.getBuildName() + " " + LocalDateTime.now());
             androidOptions.setCapability("name", projectConfig.getTestName() + " " + androidConfig.getDeviceName());
+            androidOptions.setCapability("interactiveDebugging", true);
+            androidOptions.setCapability("browserstack.debug", true);
             androidOptions.setCapability("geoLocation","RU");
-            androidOptions.setCapability("location", "59.9343,30.3351");
+            androidOptions.setCapability("location", "59.937647, 30.436059");
             return new AndroidDriver(getBrowserstackUrl(), androidOptions);
         } else {
             androidOptions.setAutomationName(ANDROID_UIAUTOMATOR2);
