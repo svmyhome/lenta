@@ -20,7 +20,7 @@ import static models.pages.SearchPage.MILK;
 @DisplayName("Поиск товара")
 public class SearchTests extends TestBase {
 
-    MainPage mainPage = new MainPage();;
+    MainPage mainPage = new MainPage();
     SearchPage searchPage= new SearchPage();
 
     @Test
