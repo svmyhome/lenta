@@ -1,18 +1,20 @@
 package tests.ui;
 
 import io.qameta.allure.*;
+import models.pages.LoginPage;
+import models.pages.MainPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import models.pages.LoginPage;
-import models.pages.MainPage;
 import tests.TestBase;
+
+import static models.pages.LoginPage.SEND_SMS;
 
 @Feature("Авторизация")
 @Story("Пользователь может авторизоваться через кнопку 'Войти'")
 @Owner("sarychev")
-@Tags({@Tag("AUTHORIZATION"), @Tag("SMOKE")})
+@Tags({@Tag("auth"), @Tag("smoke")})
 @Tag("ui")
 @DisplayName("Авторизация через номер телефона")
 public class LoginPageTests extends TestBase {
@@ -43,16 +45,16 @@ public class LoginPageTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Окно 'Введите код' открыто")
+    @DisplayName("Открыто окно 'Введите код'")
     @Severity(SeverityLevel.BLOCKER)
     void enterCodeWindowOpenTest() {
         mainPage.openMainPage()
                 .closeToolTip();
         loginPage.clickOnLoginButton()
                 .setPhoneNumber()
-                .shouldCodeButtonEnable();
-        //TODO
+                .shouldCodeButtonEnable()
+                .clickGetCode()
+                .shouldSendGetCode(SEND_SMS);
     }
-
 
 }

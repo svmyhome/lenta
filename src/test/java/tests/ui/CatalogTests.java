@@ -8,7 +8,10 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-import static helpers.Constants.CatalogItems.*;
+import static models.pages.CatalogPanel.CATALOG_DRINKS;
+import static models.pages.CatalogPanel.CATALOG_NEW_PRODUCTS;
+import static models.pages.CatalogPanel.CATALOG_SKU_DRINKS;
+
 
 @Feature("Каталог")
 @Story("Пользователь может работать с каталогом товаров")
