@@ -11,15 +11,15 @@ import tests.TestBase;
 import static helpers.Constants.CatalogItems.CATALOG_NEW_PRODUCTS;
 
 @Feature("Каталог")
-@Story("Работа с каталогом")
+@Story("Пользователь может работать с каталогом товаров")
 @Owner("sarychev")
-@Tag("CATALOG")
+@Tag("catalog")
 @Tag("ui")
 @DisplayName("Работа с каталогом")
 public class CatalogTests extends TestBase {
 
     MainPage mainPage = new MainPage();;
-    CatalogPanel catalogPanel =new CatalogPanel();;
+    CatalogPanel catalogPanel =new CatalogPanel();
 
     @Test
     @DisplayName("Переход в пункт каталога " + CATALOG_NEW_PRODUCTS)
