@@ -7,9 +7,12 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SearchPage {
+    public static final String MILK = "молоко";
+
+
     private final static SelenideElement searchTitle = $(".head h1");
 
-    @Step("Переход на страницу с результатами поиска")
+    @Step("Товар {value} найден через поиск")
     public SearchPage getTitle(String value) {
         searchTitle.shouldHave(text(value));
         return this;

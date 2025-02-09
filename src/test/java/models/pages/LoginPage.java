@@ -9,10 +9,14 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
+
+    public static final String SEND_SMS = "Мы отправили код на номер";
+
     private final SelenideElement loginButton = $("[automation-id='login-button']"),
             authorizationWindow = $("[automation-id=dialog-auth]"),
             getCodeButton = $("input[value='Получить код']"),
-            phoneInput = $("input[type=tel]");
+            phoneInput = $("input[type=tel]"),
+            smsInput = $(".loginbox__text");
 
     @Step("Кликнуть на кнопке Войти")
     public LoginPage clickOnLoginButton() {
@@ -43,4 +47,17 @@ public class LoginPage {
         getCodeButton.shouldNotBe(disabled);
         return this;
     }
+
+    @Step("Кликнуть получить код")
+    public LoginPage clickGetCode() {
+        getCodeButton.click();
+        return this;
+    }
+
+    @Step("Отображается окно ввода смс")
+    public LoginPage shouldSendGetCode(String value) {
+        smsInput.shouldHave(text(value));
+        return this;
+    }
+
 }

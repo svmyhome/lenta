@@ -9,13 +9,15 @@ import models.pages.MainPage;
 import models.pages.SearchPage;
 import tests.TestBase;
 
-import static java.lang.Thread.sleep;
+import static models.pages.SearchPage.MILK;
+
 
 @Feature("Поиск")
-@Story("Поиск через меню поиска")
+@Story("Пользователь может найти товар")
 @Owner("sarychev")
-@Tags({@Tag("SEARCH"), @Tag("SMOKE")})
+@Tags({@Tag("search"), @Tag("smoke")})
 @Tag("ui")
+@DisplayName("Поиск товара")
 public class SearchTests extends TestBase {
 
     MainPage mainPage = new MainPage();;
@@ -28,7 +30,7 @@ public class SearchTests extends TestBase {
         mainPage.openMainPage()
                 .closeToolTip();
         mainPage.openSearch()
-                .fillItemSearchEnter("молоко");
-        searchPage.getTitle("молоко");
+                .fillItemSearchEnter(MILK);
+        searchPage.getTitle(MILK);
     }
 }

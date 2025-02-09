@@ -8,27 +8,43 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-import static helpers.Constants.CatalogItems.CATALOG_NEW_PRODUCTS;
+import static models.pages.CatalogPanel.CATALOG_DRINKS;
+import static models.pages.CatalogPanel.CATALOG_NEW_PRODUCTS;
+import static models.pages.CatalogPanel.CATALOG_SKU_DRINKS;
+
 
 @Feature("Каталог")
-@Story("Работа с каталогом")
+@Story("Пользователь может работать с каталогом товаров")
 @Owner("sarychev")
-@Tag("CATALOG")
+@Tag("catalog")
 @Tag("ui")
 @DisplayName("Работа с каталогом")
 public class CatalogTests extends TestBase {
 
-    MainPage mainPage = new MainPage();;
-    CatalogPanel catalogPanel =new CatalogPanel();;
+    MainPage mainPage = new MainPage();
+    CatalogPanel catalogPanel =new CatalogPanel();
 
     @Test
-    @DisplayName("Переход в пункт каталога " + CATALOG_NEW_PRODUCTS)
+    @DisplayName("Переход в каталог 1-го уровня " + CATALOG_NEW_PRODUCTS)
     @Severity(SeverityLevel.BLOCKER)
-    void openCatalog(){
+    void openCatalogTest(){
         mainPage.openMainPage()
                 .closeToolTip();
         mainPage.openCatalog();
-        catalogPanel.clickMainCat(CATALOG_NEW_PRODUCTS)
-                .shouldCatalog(CATALOG_NEW_PRODUCTS);
+        catalogPanel.openFirstLevelCatalog(CATALOG_NEW_PRODUCTS)
+                .shouldFirstLevelCatalog(CATALOG_NEW_PRODUCTS);
+    }
+
+
+    @Test
+    @DisplayName("Переход в каталог 2-го уровня " + CATALOG_DRINKS)
+    @Severity(SeverityLevel.NORMAL)
+    void openCatalogSecondLevelTest(){
+        mainPage.openMainPage()
+                .closeToolTip();
+        mainPage.openCatalog();
+        catalogPanel.hoverOnCatalog(CATALOG_NEW_PRODUCTS)
+                .openSecondLevelCatalog(CATALOG_SKU_DRINKS)
+                .shouldSecondLevelCatalog(CATALOG_DRINKS);
     }
 }
