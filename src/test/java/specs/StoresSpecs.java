@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
 import static io.restassured.filter.log.LogDetail.STATUS;
 
-public class StoresSpers {
+public class StoresSpecs {
     static Map<String, String> headers = Map.of(
             "Content-Type", "application/json",
             "DeviceID", "ff86f8dd-7154-f591-199c-19fecb138aac",
