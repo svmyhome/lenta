@@ -12,6 +12,10 @@ public class ApiConstants {
     public static final String STORE_CITY = "Альметьевск";
     public static final int STORE_COUNT = 662;
 
+    public static final String USER_IS_NOT_APPROVED_MESSAGE = "Нет аккаунта с таким номером телефона. Проверьте цифры, пожалуйста, или зарегистрируйтесь.";
+    public static final String USER_IS_NOT_APPROVED_ERROR = "DbUserIsNotApproved";
+    public static final String UNSUPPORTED_MEDIA_TYPE_MESSAGE = "Запрашиваемый media-type не поддерживается.";
+    public static final String UNSUPPORTED_MEDIA_TYPE_ERROR = "UnsupportedMediaType";
 
 
 

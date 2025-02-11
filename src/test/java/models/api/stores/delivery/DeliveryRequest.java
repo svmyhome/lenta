@@ -1,6 +1,4 @@
-package models.api.deliveryModeGet;
-
-import net.bytebuddy.description.method.ParameterDescription;
+package models.api.stores.delivery;
 
 public record DeliveryRequest(String method, Object params, String jsonrpc, String id) {
 

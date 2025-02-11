@@ -7,9 +7,9 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
-import models.api.deliveryModeGet.DeliveryRequest;
-import models.api.deliveryModeGet.response.Delivery;
-import models.api.stores.StoreResponse;
+import models.api.stores.delivery.DeliveryRequest;
+import models.api.stores.delivery.response.DeliveryModeResponse;
+import models.api.stores.store.StoreResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -22,8 +22,8 @@ import static models.api.ApiConstants.STORE_CITY;
 import static models.api.ApiConstants.STORE_CODE;
 import static models.api.ApiConstants.STORE_COUNT;
 import static org.assertj.core.api.Assertions.assertThat;
-import static specs.StoresSpecs.requestSpec;
-import static specs.StoresSpecs.successResponse;
+import static specifications.ApiSpecifications.requestSpecification;
+import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
 
 @Slf4j
@@ -38,10 +38,10 @@ public class StoreTests extends TestBase {
     @DisplayName("Успешное получение данных о магазине номер " + STORE_CODE)
     @Severity(SeverityLevel.BLOCKER)
     public void getStoreTest() {
-        StoreResponse storeResponse = step("Успешный запрос данных магазина " + STORE_CODE, () -> given(requestSpec)
+        StoreResponse storeResponse = step("Успешный запрос данных магазина " + STORE_CODE, () -> given(requestSpecification)
                 .get("/api/v1/stores/" + STORE_CODE)
                 .then()
-                .spec(successResponse)
+                .spec(statusCode200ResponseSpecification)
                 .extract().as(StoreResponse.class));
 
         step("Код, адрес и город совпадают", () ->
@@ -57,10 +57,10 @@ public class StoreTests extends TestBase {
     @DisplayName("Успешное получение данных о всех магазинах")
     @Severity(SeverityLevel.CRITICAL)
     public void getListStoresTest() {
-        Response response = step("Успешный запрос данных о всех магазинах", () -> given(requestSpec)
+        Response response = step("Успешный запрос данных о всех магазинах", () -> given(requestSpecification)
                 .get("/api/v1/stores")
                 .then()
-                .spec(successResponse)
+                .spec(statusCode200ResponseSpecification)
                 .extract().response());
 
         step("Количество магазинов 662", () -> {
@@ -71,15 +71,15 @@ public class StoreTests extends TestBase {
     @Test
     @DisplayName("Успешное получение информации о доставке")
     @Severity(SeverityLevel.TRIVIAL)
-    public void deliveryModeGet() {
+    public void getDeliveryModeTest() {
         DeliveryRequest deliveryRequest = new DeliveryRequest("deliveryModeGet", null, "2.0", "deliveryModeGet_1daa977f820b6");
 
-        Delivery response = step("Успешный запрос типом Доставка", () -> given(requestSpec)
+        DeliveryModeResponse response = step("Успешный запрос типом Доставка", () -> given(requestSpecification)
                 .when().body(deliveryRequest)
                 .post("/jrpc/deliveryModeGet")
                 .then()
-                .spec(successResponse)
-                .extract().as(Delivery.class));
+                .spec(statusCode200ResponseSpecification)
+                .extract().as(DeliveryModeResponse.class));
 
         step("Версия и токен получены", () -> {
             assertThat(response.jsonrpc()).isEqualTo("2.0");

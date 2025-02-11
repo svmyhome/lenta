@@ -1,4 +1,4 @@
-package models.api.catalogsearch;
+package models.api.sku;
 
 public record CatalogSearchRequest(String StoreIds) {
 }

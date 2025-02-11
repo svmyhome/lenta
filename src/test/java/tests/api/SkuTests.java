@@ -7,7 +7,7 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
-import models.api.catalogsearch.CatalogSearchRequest;
+import models.api.sku.CatalogSearchRequest;
 import models.api.sku.SkuResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -21,8 +21,8 @@ import static models.api.ApiConstants.SKU_BREAD;
 import static models.api.ApiConstants.SKU_IDS;
 import static models.api.ApiConstants.SKU_VODKA_ARKHANGELSKAYA;
 import static org.assertj.core.api.Assertions.assertThat;
-import static specs.StoresSpecs.requestSpec;
-import static specs.StoresSpecs.successResponse;
+import static specifications.ApiSpecifications.requestSpecification;
+import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
 
 @Slf4j
@@ -37,10 +37,11 @@ public class SkuTests extends TestBase {
     @DisplayName("Успешное получение данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA)
     @Severity(SeverityLevel.BLOCKER)
     public void getSkuTest() {
-        SkuResponse skuResponse = step("Успешный запрос данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA, () -> given(requestSpec)
+        SkuResponse skuResponse = step("Успешный запрос данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA, () ->
+                given(requestSpecification)
                 .get(String.format("/api/v1/skus/%s/name", SKU_VODKA_ARKHANGELSKAYA))
                 .then()
-                .spec(successResponse)
+                .spec(statusCode200ResponseSpecification)
                 .extract().as(SkuResponse.class));
 
         step("SKU и название товара совпадают", () ->
@@ -51,15 +52,15 @@ public class SkuTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Успешный поиск товара " + SKU_BREAD)
+    @DisplayName("Успешный поиск товара в каталоге " + SKU_BREAD)
     @Severity(SeverityLevel.TRIVIAL)
-    public void catalogSearchTest() {
+    public void searchSkuFromCatalogTest() {
         CatalogSearchRequest catalogSearchRequest = new CatalogSearchRequest(SKU_IDS);
-        Response response = step("Успешный запрос данных о всех магазинах", () -> given(requestSpec)
+        Response response = step("Успешный запрос данных о товаре", () -> given(requestSpecification)
                 .when().body(catalogSearchRequest)
                 .get("/api/v1/stores/0012/catalog/search/?value=" + SKU_BREAD)
                 .then()
-                .spec(successResponse)
+                .spec(statusCode200ResponseSpecification)
                 .extract().response());
 
         step("Товар найден " + SKU_BREAD, () -> {

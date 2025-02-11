@@ -1,4 +1,4 @@
-package models.api.stores;
+package models.api.stores.store;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -11,8 +11,8 @@ public record StoreResponse(
         String type,
         double lat,
 
-        @JsonProperty("long") // Указываем, что это поле соответствует JSON-полю "long"
-        double longitude, // Используем другое имя для переменной
+        @JsonProperty("long")
+        double longitude,
 
         String opensAt,
         String closesAt,
