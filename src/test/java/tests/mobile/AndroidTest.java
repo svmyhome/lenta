@@ -48,11 +48,16 @@ public class AndroidTest extends TestBase {
     @DisplayName("Успешный поиск товара через строку поиска")
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSelectSkuFromSearchInputTest() throws InterruptedException {
-        $(id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")).click();
+//        $(id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")).click();
+//        Thread.sleep(5000);
+//        $(id("SearchText")).click();
+//        $(id("TitleCenter")).click();
+//        $(id("AvailableAddressText")).shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
+        deviceLocationScreen.clickPermissionAllowed();
         Thread.sleep(5000);
-        $(id("SearchText")).click();
-        $(id("TitleCenter")).click();
-        $(id("AvailableAddressText")).shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
+        storeSelectionScreen.clickPermissionAllowed()
+                .selectStore()
+                .assertStoreSelection("Санкт-Петербург, Заневский пр., 71");
         $(id("BottomButton")).click();
         $(id("mainSearch")).click();
         $(id("1. SearchPlaceholder")).click();
@@ -65,11 +70,16 @@ public class AndroidTest extends TestBase {
     @DisplayName("Успешный выбор товара через строку поиска")
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSkuSelectionFromSearchInputTest() throws InterruptedException {
-        $(id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")).click();
+//        $(id("com.android.permissioncontroller:id/permission_allow_foreground_only_button")).click();
+//        Thread.sleep(5000);
+//        $(id("SearchText")).click();
+//        $(id("TitleCenter")).click();
+//        $(id("AvailableAddressText")).shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
+        deviceLocationScreen.clickPermissionAllowed();
         Thread.sleep(5000);
-        $(id("SearchText")).click();
-        $(id("TitleCenter")).click();
-        $(id("AvailableAddressText")).shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
+        storeSelectionScreen.clickPermissionAllowed()
+                .selectStore()
+                .assertStoreSelection("Санкт-Петербург, Заневский пр., 71");
         $(id("BottomButton")).click();
         $(id("mainSearch")).click();
         $(id("1. SearchPlaceholder")).click();
