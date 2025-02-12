@@ -48,8 +48,8 @@ public class SkuTests extends TestBase {
 
         step("SKU и название товара совпадают", () ->
         {
-            api.compareValues(skuResponse.code(), SKU_VODKA_ARKHANGELSKAYA)
-                    .compareValues(skuResponse.name(), NAME_VODKA_ARKHANGELSKAYA);
+            api.assertValues(skuResponse.code(), SKU_VODKA_ARKHANGELSKAYA)
+                    .assertValues(skuResponse.name(), NAME_VODKA_ARKHANGELSKAYA);
         });
     }
 
@@ -66,7 +66,7 @@ public class SkuTests extends TestBase {
                 .extract().response());
 
         step("Товар найден " + SKU_BREAD, () -> {
-            api.compareListSize(response, "skus.title",1);
+            api.assertListSize(response, "skus.title",1);
         });
     }
 

@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import models.api.login.LoginOtpRequest;
 import models.api.login.UnsupportedMediaTypeResponse;
 import models.api.login.UserIsNotApprovedResponse;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -54,13 +53,13 @@ public class LoginTests extends TestBase {
 
         step("Нет аккаунта с таким номером телефона", () ->
         {
-            api.compareValues(unsupportedMediaTypeResponse.message(), UNSUPPORTED_MEDIA_TYPE_MESSAGE)
-                    .compareValues(unsupportedMediaTypeResponse.errorCode(), UNSUPPORTED_MEDIA_TYPE_ERROR);
+            api.assertValues(unsupportedMediaTypeResponse.message(), UNSUPPORTED_MEDIA_TYPE_MESSAGE)
+                    .assertValues(unsupportedMediaTypeResponse.errorCode(), UNSUPPORTED_MEDIA_TYPE_ERROR);
         });
     }
 
     @Test
-    @DisplayName("Ошибка Нет аккаунта с таким номером телефона")
+    @DisplayName("Ошибка 403: Нет аккаунта с указанным номером телефона")
     @Severity(SeverityLevel.TRIVIAL)
     public void forbiddenLoginOtpTest() {
         UserIsNotApprovedResponse userIsNotApprovedResponse = step("Получен код 403", () ->
@@ -72,8 +71,8 @@ public class LoginTests extends TestBase {
 
         step("Нет аккаунта с таким номером телефона", () ->
         {
-            api.compareValues(userIsNotApprovedResponse.message(), USER_IS_NOT_APPROVED_MESSAGE)
-                    .compareValues(userIsNotApprovedResponse.errorCode(), USER_IS_NOT_APPROVED_ERROR);
+            api.assertValues(userIsNotApprovedResponse.message(), USER_IS_NOT_APPROVED_MESSAGE)
+                    .assertValues(userIsNotApprovedResponse.errorCode(), USER_IS_NOT_APPROVED_ERROR);
         });
     }
 

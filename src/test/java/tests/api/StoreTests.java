@@ -48,9 +48,9 @@ public class StoreTests extends TestBase {
 
         step("Код, адрес и город совпадают", () ->
         {
-            api.compareValues(storeResponse.id(),STORE_CODE)
-                    .compareValues(storeResponse.address(),STORE_ADDRESS)
-                    .compareValues(storeResponse.cityName(),(STORE_CITY));
+            api.assertValues(storeResponse.id(),STORE_CODE)
+                    .assertValues(storeResponse.address(),STORE_ADDRESS)
+                    .assertValues(storeResponse.cityName(),(STORE_CITY));
         });
 
     }
@@ -66,7 +66,7 @@ public class StoreTests extends TestBase {
                 .extract().response());
 
         step("Количество магазинов 662", () -> {
-            api.compareListSize(response, "id", STORE_COUNT);
+            api.assertListSize(response, "id", STORE_COUNT);
         });
     }
 
@@ -84,8 +84,8 @@ public class StoreTests extends TestBase {
                 .extract().as(DeliveryModeResponse.class));
 
         step("Версия и токен получены", () -> {
-            api.compareValues(response.jsonrpc(),"2.0")
-                    .compareValues(response.result().sessionToken(),"3849FACA09F05B077ADF56894288E40A1");
+            api.assertValues(response.jsonrpc(),"2.0")
+                    .assertValues(response.result().sessionToken(),"3849FACA09F05B077ADF56894288E40A1");
         });
     }
 
