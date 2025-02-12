@@ -50,8 +50,10 @@ public class TestBase {
                     Attach.addVideo();
                 }
             }
+            Selenide.closeWebDriver();
         }
         if (isBrowserStackDevice) {
+            Selenide.closeWebDriver();
             Attach.addVideoSelenoid(Selenide.sessionId().toString());
         }
     }
