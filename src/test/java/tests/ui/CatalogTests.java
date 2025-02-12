@@ -35,7 +35,6 @@ public class CatalogTests extends TestBase {
                 .shouldFirstLevelCatalog(CATALOG_NEW_PRODUCTS);
     }
 
-
     @Test
     @DisplayName("Переход в каталог 2-го уровня " + CATALOG_DRINKS)
     @Severity(SeverityLevel.NORMAL)
