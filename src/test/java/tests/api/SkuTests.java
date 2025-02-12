@@ -17,11 +17,12 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
+import static models.api.ApiConstants.CATALOG_SEARCH;
 import static models.api.ApiConstants.NAME_VODKA_ARKHANGELSKAYA;
+import static models.api.ApiConstants.SKUS_NAME;
 import static models.api.ApiConstants.SKU_BREAD;
 import static models.api.ApiConstants.SKU_IDS;
 import static models.api.ApiConstants.SKU_VODKA_ARKHANGELSKAYA;
-import static org.assertj.core.api.Assertions.assertThat;
 import static specifications.ApiSpecifications.requestSpecification;
 import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
@@ -41,7 +42,7 @@ public class SkuTests extends TestBase {
     public void getSkuTest() {
         SkuResponse skuResponse = step("Успешный запрос данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA, () ->
                 given(requestSpecification)
-                        .get(String.format("/api/v1/skus/%s/name", SKU_VODKA_ARKHANGELSKAYA))
+                        .get(String.format(SKUS_NAME, SKU_VODKA_ARKHANGELSKAYA))
                         .then()
                         .spec(statusCode200ResponseSpecification)
                         .extract().as(SkuResponse.class));
@@ -58,15 +59,16 @@ public class SkuTests extends TestBase {
     @Severity(SeverityLevel.TRIVIAL)
     public void searchSkuFromCatalogTest() {
         CatalogSearchRequest catalogSearchRequest = new CatalogSearchRequest(SKU_IDS);
-        Response response = step("Успешный запрос данных о товаре", () -> given(requestSpecification)
-                .when().body(catalogSearchRequest)
-                .get("/api/v1/stores/0012/catalog/search/?value=" + SKU_BREAD)
-                .then()
-                .spec(statusCode200ResponseSpecification)
-                .extract().response());
+        Response response = step("Успешный запрос данных о товаре", () ->
+                given(requestSpecification)
+                        .when().body(catalogSearchRequest)
+                        .get(CATALOG_SEARCH + SKU_BREAD)
+                        .then()
+                        .spec(statusCode200ResponseSpecification)
+                        .extract().response());
 
         step("Товар найден " + SKU_BREAD, () -> {
-            api.assertListSize(response, "skus.title",1);
+            api.assertListSize(response, "skus.title", 1);
         });
     }
 

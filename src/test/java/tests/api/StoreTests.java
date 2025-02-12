@@ -18,11 +18,12 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
+import static models.api.ApiConstants.DELIVERY_MODE_GET;
+import static models.api.ApiConstants.STORES;
 import static models.api.ApiConstants.STORE_ADDRESS;
 import static models.api.ApiConstants.STORE_CITY;
 import static models.api.ApiConstants.STORE_CODE;
 import static models.api.ApiConstants.STORE_COUNT;
-import static org.assertj.core.api.Assertions.assertThat;
 import static specifications.ApiSpecifications.requestSpecification;
 import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
@@ -40,17 +41,18 @@ public class StoreTests extends TestBase {
     @DisplayName("Успешное получение данных о магазине номер " + STORE_CODE)
     @Severity(SeverityLevel.BLOCKER)
     public void getStoreTest() {
-        StoreResponse storeResponse = step("Успешный запрос данных магазина " + STORE_CODE, () -> given(requestSpecification)
-                .get("/api/v1/stores/" + STORE_CODE)
-                .then()
-                .spec(statusCode200ResponseSpecification)
-                .extract().as(StoreResponse.class));
+        StoreResponse storeResponse = step("Успешный запрос данных магазина " + STORE_CODE, () ->
+                given(requestSpecification)
+                        .get(STORES + STORE_CODE)
+                        .then()
+                        .spec(statusCode200ResponseSpecification)
+                        .extract().as(StoreResponse.class));
 
         step("Код, адрес и город совпадают", () ->
         {
-            api.assertValues(storeResponse.id(),STORE_CODE)
-                    .assertValues(storeResponse.address(),STORE_ADDRESS)
-                    .assertValues(storeResponse.cityName(),(STORE_CITY));
+            api.assertValues(storeResponse.id(), STORE_CODE)
+                    .assertValues(storeResponse.address(), STORE_ADDRESS)
+                    .assertValues(storeResponse.cityName(), (STORE_CITY));
         });
 
     }
@@ -59,13 +61,14 @@ public class StoreTests extends TestBase {
     @DisplayName("Успешное получение данных о всех магазинах")
     @Severity(SeverityLevel.CRITICAL)
     public void getListStoresTest() {
-        Response response = step("Успешный запрос данных о всех магазинах", () -> given(requestSpecification)
-                .get("/api/v1/stores")
-                .then()
-                .spec(statusCode200ResponseSpecification)
-                .extract().response());
+        Response response = step("Успешный запрос данных о всех магазинах", () ->
+                given(requestSpecification)
+                        .get(STORES)
+                        .then()
+                        .spec(statusCode200ResponseSpecification)
+                        .extract().response());
 
-        step("Количество магазинов 662", () -> {
+        step("Количество магазинов " + STORE_COUNT, () -> {
             api.assertListSize(response, "id", STORE_COUNT);
         });
     }
@@ -76,16 +79,17 @@ public class StoreTests extends TestBase {
     public void getDeliveryModeTest() {
         DeliveryRequest deliveryRequest = new DeliveryRequest("deliveryModeGet", null, "2.0", "deliveryModeGet_1daa977f820b6");
 
-        DeliveryModeResponse response = step("Успешный запрос типом Доставка", () -> given(requestSpecification)
-                .when().body(deliveryRequest)
-                .post("/jrpc/deliveryModeGet")
-                .then()
-                .spec(statusCode200ResponseSpecification)
-                .extract().as(DeliveryModeResponse.class));
+        DeliveryModeResponse response = step("Успешный запрос типом Доставка", () ->
+                given(requestSpecification)
+                        .when().body(deliveryRequest)
+                        .post(DELIVERY_MODE_GET)
+                        .then()
+                        .spec(statusCode200ResponseSpecification)
+                        .extract().as(DeliveryModeResponse.class));
 
         step("Версия и токен получены", () -> {
-            api.assertValues(response.jsonrpc(),"2.0")
-                    .assertValues(response.result().sessionToken(),"3849FACA09F05B077ADF56894288E40A1");
+            api.assertValues(response.jsonrpc(), "2.0")
+                    .assertValues(response.result().sessionToken(), "3849FACA09F05B077ADF56894288E40A1");
         });
     }
 

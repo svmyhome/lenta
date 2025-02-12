@@ -17,11 +17,11 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
+import static models.api.ApiConstants.LOGINOTP;
 import static models.api.ApiConstants.UNSUPPORTED_MEDIA_TYPE_ERROR;
 import static models.api.ApiConstants.UNSUPPORTED_MEDIA_TYPE_MESSAGE;
 import static models.api.ApiConstants.USER_IS_NOT_APPROVED_ERROR;
 import static models.api.ApiConstants.USER_IS_NOT_APPROVED_MESSAGE;
-import static org.assertj.core.api.Assertions.assertThat;
 import static specifications.ApiSpecifications.requestSpecification;
 import static specifications.ApiSpecifications.statusCode403ResponseSpecification;
 import static specifications.ApiSpecifications.statusCode415RequestSpecification;
@@ -46,7 +46,7 @@ public class LoginTests extends TestBase {
         UnsupportedMediaTypeResponse unsupportedMediaTypeResponse = step("Получен код 415", () ->
                 given(statusCode415RequestSpecification)
                         .when().body(loginOtpRequest)
-                        .post("/api/v1/authentication/loginotp")
+                        .post(LOGINOTP)
                         .then()
                         .spec(statusCode415ResponseSpecification)
                         .extract().as(UnsupportedMediaTypeResponse.class));
@@ -65,7 +65,7 @@ public class LoginTests extends TestBase {
         UserIsNotApprovedResponse userIsNotApprovedResponse = step("Получен код 403", () ->
                 given(requestSpecification)
                         .when().body(loginOtpRequest)
-                        .post("/api/v1/authentication/loginotp")
+                        .post(LOGINOTP)
                         .then()
                         .spec(statusCode403ResponseSpecification).extract().as(UserIsNotApprovedResponse.class));
 
