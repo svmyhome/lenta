@@ -11,7 +11,8 @@ import static io.appium.java_client.AppiumBy.id;
 public class StoreSelectionScreen {
     public static final SelenideElement searchText = $(AppiumBy.id("SearchText")),
             selectStore = $(id("TitleCenter")),
-            storeAddress = $(id("AvailableAddressText"));
+            storeAddress = $(id("AvailableAddressText")),
+            viewGoods = $(id("BottomButton"));
 
     @Step("Кликнуть на кнопке While using the App")
     public StoreSelectionScreen clickPermissionAllowed() {
@@ -25,9 +26,16 @@ public class StoreSelectionScreen {
         return this;
     }
 
+    @Step("Посмотреть товары")
+    public StoreSelectionScreen viewGoods() {
+        viewGoods.click();
+        return this;
+    }
+
     @Step("Магазин выбран")
     public StoreSelectionScreen assertStoreSelection(String value) {
-        storeAddress.shouldHave(text("Санкт-Петербург, Заневский пр., 71"));;
+        storeAddress.shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
+        ;
         return this;
     }
 

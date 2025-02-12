@@ -57,8 +57,9 @@ public class AndroidTest extends TestBase {
         Thread.sleep(5000);
         storeSelectionScreen.clickPermissionAllowed()
                 .selectStore()
-                .assertStoreSelection("Санкт-Петербург, Заневский пр., 71");
-        $(id("BottomButton")).click();
+                .assertStoreSelection("Санкт-Петербург, Заневский пр., 71")
+                .viewGoods();
+//        $(id("BottomButton")).click();
         $(id("mainSearch")).click();
         $(id("1. SearchPlaceholder")).click();
         $(id("1. SearchPlaceholder")).sendKeys("молоко");
@@ -79,8 +80,9 @@ public class AndroidTest extends TestBase {
         Thread.sleep(5000);
         storeSelectionScreen.clickPermissionAllowed()
                 .selectStore()
-                .assertStoreSelection("Санкт-Петербург, Заневский пр., 71");
-        $(id("BottomButton")).click();
+                .assertStoreSelection("Санкт-Петербург, Заневский пр., 71")
+                .viewGoods();
+//        $(id("BottomButton")).click();
         $(id("mainSearch")).click();
         $(id("1. SearchPlaceholder")).click();
         $(id("1. SearchPlaceholder")).sendKeys("молоко");
