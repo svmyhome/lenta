@@ -1,5 +1,6 @@
 package tests.api;
 
+import helpers.ApiHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -32,6 +33,7 @@ import static specifications.ApiSpecifications.statusCode200ResponseSpecificatio
 @Tag("api")
 @DisplayName("Информация о товарах")
 public class SkuTests extends TestBase {
+    ApiHelper api = new ApiHelper();
 
     @Test
     @DisplayName("Успешное получение данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA)
@@ -39,15 +41,15 @@ public class SkuTests extends TestBase {
     public void getSkuTest() {
         SkuResponse skuResponse = step("Успешный запрос данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA, () ->
                 given(requestSpecification)
-                .get(String.format("/api/v1/skus/%s/name", SKU_VODKA_ARKHANGELSKAYA))
-                .then()
-                .spec(statusCode200ResponseSpecification)
-                .extract().as(SkuResponse.class));
+                        .get(String.format("/api/v1/skus/%s/name", SKU_VODKA_ARKHANGELSKAYA))
+                        .then()
+                        .spec(statusCode200ResponseSpecification)
+                        .extract().as(SkuResponse.class));
 
         step("SKU и название товара совпадают", () ->
         {
-            assertThat(skuResponse.code()).isEqualTo(SKU_VODKA_ARKHANGELSKAYA);  // TODO в page перенсти
-            assertThat(skuResponse.name()).isEqualTo(NAME_VODKA_ARKHANGELSKAYA);
+            api.compareValues(skuResponse.code(), SKU_VODKA_ARKHANGELSKAYA)
+                    .compareValues(skuResponse.name(), NAME_VODKA_ARKHANGELSKAYA);
         });
     }
 
@@ -64,7 +66,7 @@ public class SkuTests extends TestBase {
                 .extract().response());
 
         step("Товар найден " + SKU_BREAD, () -> {
-            assertThat(response.jsonPath().getList("skus.title").size()).isGreaterThanOrEqualTo(1);
+            api.compareListSize(response, "skus.title",1);
         });
     }
 

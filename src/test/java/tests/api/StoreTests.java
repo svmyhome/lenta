@@ -1,5 +1,6 @@
 package tests.api;
 
+import helpers.ApiHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -33,6 +34,7 @@ import static specifications.ApiSpecifications.statusCode200ResponseSpecificatio
 @Tag("api")
 @DisplayName("Информация о магазинах")
 public class StoreTests extends TestBase {
+    ApiHelper api = new ApiHelper();
 
     @Test
     @DisplayName("Успешное получение данных о магазине номер " + STORE_CODE)
@@ -46,9 +48,9 @@ public class StoreTests extends TestBase {
 
         step("Код, адрес и город совпадают", () ->
         {
-            assertThat(storeResponse.id()).isEqualTo(STORE_CODE);
-            assertThat(storeResponse.address()).isEqualTo(STORE_ADDRESS);
-            assertThat(storeResponse.cityName()).isEqualTo(STORE_CITY);
+            api.compareValues(storeResponse.id(),STORE_CODE)
+                    .compareValues(storeResponse.address(),STORE_ADDRESS)
+                    .compareValues(storeResponse.cityName(),(STORE_CITY));
         });
 
     }
@@ -64,7 +66,7 @@ public class StoreTests extends TestBase {
                 .extract().response());
 
         step("Количество магазинов 662", () -> {
-            assertThat(response.jsonPath().getList("id").size()).isEqualTo(STORE_COUNT);
+            api.compareListSize(response, "id", STORE_COUNT);
         });
     }
 
@@ -82,8 +84,8 @@ public class StoreTests extends TestBase {
                 .extract().as(DeliveryModeResponse.class));
 
         step("Версия и токен получены", () -> {
-            assertThat(response.jsonrpc()).isEqualTo("2.0");
-            assertThat(response.result().sessionToken()).isEqualTo("3849FACA09F05B077ADF56894288E40A1");
+            api.compareValues(response.jsonrpc(),"2.0")
+                    .compareValues(response.result().sessionToken(),"3849FACA09F05B077ADF56894288E40A1");
         });
     }
 

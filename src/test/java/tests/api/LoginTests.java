@@ -1,5 +1,6 @@
 package tests.api;
 
+import helpers.ApiHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -9,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import models.api.login.LoginOtpRequest;
 import models.api.login.UnsupportedMediaTypeResponse;
 import models.api.login.UserIsNotApprovedResponse;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -34,6 +36,7 @@ import static specifications.ApiSpecifications.statusCode415ResponseSpecificatio
 @Tag("api")
 @DisplayName("Ошибки авторизации")
 public class LoginTests extends TestBase {
+    ApiHelper api = new ApiHelper();
 
     public final LoginOtpRequest loginOtpRequest = new LoginOtpRequest("79535006575");
 
@@ -51,8 +54,8 @@ public class LoginTests extends TestBase {
 
         step("Нет аккаунта с таким номером телефона", () ->
         {
-            assertThat(unsupportedMediaTypeResponse.message()).isEqualTo(UNSUPPORTED_MEDIA_TYPE_MESSAGE);
-            assertThat(unsupportedMediaTypeResponse.errorCode()).isEqualTo(UNSUPPORTED_MEDIA_TYPE_ERROR);
+            api.compareValues(unsupportedMediaTypeResponse.message(), UNSUPPORTED_MEDIA_TYPE_MESSAGE)
+                    .compareValues(unsupportedMediaTypeResponse.errorCode(), UNSUPPORTED_MEDIA_TYPE_ERROR);
         });
     }
 
@@ -69,8 +72,8 @@ public class LoginTests extends TestBase {
 
         step("Нет аккаунта с таким номером телефона", () ->
         {
-            assertThat(userIsNotApprovedResponse.message()).isEqualTo(USER_IS_NOT_APPROVED_MESSAGE);
-            assertThat(userIsNotApprovedResponse.errorCode()).isEqualTo(USER_IS_NOT_APPROVED_ERROR);
+            api.compareValues(userIsNotApprovedResponse.message(), USER_IS_NOT_APPROVED_MESSAGE)
+                    .compareValues(userIsNotApprovedResponse.errorCode(), USER_IS_NOT_APPROVED_ERROR);
         });
     }
 
