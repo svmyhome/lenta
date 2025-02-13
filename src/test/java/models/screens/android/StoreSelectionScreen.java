@@ -14,8 +14,8 @@ public class StoreSelectionScreen {
             storeAddress = $(id("AvailableAddressText")),
             viewGoods = $(id("BottomButton"));
 
-    @Step("Кликнуть на кнопке While using the App")
-    public StoreSelectionScreen clickPermissionAllowed() {
+    @Step("Кликнуть на кнопке поиска магазина")
+    public StoreSelectionScreen clickFindStore() {
         searchText.click();
         return this;
     }
@@ -35,7 +35,6 @@ public class StoreSelectionScreen {
     @Step("Магазин выбран")
     public StoreSelectionScreen assertStoreSelection(String value) {
         storeAddress.shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
-        ;
         return this;
     }
 
