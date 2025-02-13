@@ -2,6 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.DeviceAndroidConfig;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
@@ -10,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 
 import javax.annotation.Nonnull;
 import java.time.LocalDateTime;
+import io.appium.java_client.Setting;
 
 import static helpers.BrowserstackHelper.getBrowserstackUrl;
 import static helpers.LocalHelper.*;
@@ -44,6 +46,8 @@ public class CreateMobileDriver implements WebDriverProvider {
             androidOptions.setCapability("project", projectConfig.getProjectName());
             androidOptions.setCapability("build", projectConfig.getBuildName() + " " + LocalDateTime.now());
             androidOptions.setCapability("name", projectConfig.getTestName() + " " + androidConfig.getDeviceName());
+            androidOptions.setCapability("interactiveDebugging", true);
+            androidOptions.setCapability("browserstack.debug", true);
             androidOptions.setCapability("geoLocation","RU");
             androidOptions.setCapability("location", "59.9343,30.3351");
             return new AndroidDriver(getBrowserstackUrl(), androidOptions);

@@ -7,7 +7,7 @@
 - [X] Подключить telegramm
 - [X] Дописать автотесты по UI
 - [X] Дописать автотетсы по АПИ
-- [ ] Дописать автотесты по Mobile
+- [X] Дописать автотесты по Mobile
 - [ ] Сделать скриншоты и описание
 
 ### Jenkins Job
@@ -36,13 +36,14 @@ gradle clean api -DenvironmentType=local -Dplatform=remote
 #### Реальная Мобилка
 ```
 gradle clean android -DdeviceHost=real -DmobileOS=android
-gradle clean android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
+gradle clean android -Dplatform=mobile -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
 ```
+
 #### Эмулятор Мобилка
 ```
-gradle clean android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
+gradle clean android -Dplatform=mobile -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
 ```
 #### BrowserStack Мобилка
 ```
-gradle clean android -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro
+gradle clean android -Dplatform=mobile -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro
 ```

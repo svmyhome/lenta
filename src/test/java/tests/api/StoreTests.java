@@ -20,7 +20,7 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static models.api.ApiConstants.DELIVERY_MODE_GET;
 import static models.api.ApiConstants.STORES;
-import static models.api.ApiConstants.STORE_ADDRESS;
+import static models.api.ApiConstants.STORE_ADDRESS_LENINA;
 import static models.api.ApiConstants.STORE_CITY;
 import static models.api.ApiConstants.STORE_CODE;
 import static models.api.ApiConstants.STORE_COUNT;
@@ -51,7 +51,7 @@ public class StoreTests extends TestBase {
         step("Код, адрес и город совпадают", () ->
         {
             api.assertValues(storeResponse.id(), STORE_CODE)
-                    .assertValues(storeResponse.address(), STORE_ADDRESS)
+                    .assertValues(storeResponse.address(), STORE_ADDRESS_LENINA)
                     .assertValues(storeResponse.cityName(), (STORE_CITY));
         });
 
