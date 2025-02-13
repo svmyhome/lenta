@@ -9,14 +9,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
 
 public class StoreSelectionScreen {
-    public static final SelenideElement searchText = $(AppiumBy.id("SearchText")),
+    public static final SelenideElement enterAddress = $(AppiumBy.id("SearchText")),
             selectStore = $(id("TitleCenter")),
             storeAddress = $(id("AvailableAddressText")),
             viewGoods = $(id("BottomButton"));
 
-    @Step("Кликнуть на кнопке поиска магазина")
-    public StoreSelectionScreen clickFindStore() {
-        searchText.click();
+    @Step("Кликнуть на поле Выведите адрес")
+    public StoreSelectionScreen clickEnterAddress() {
+        enterAddress.click();
         return this;
     }
 
@@ -26,17 +26,16 @@ public class StoreSelectionScreen {
         return this;
     }
 
-    @Step("Посмотреть товары")
-    public StoreSelectionScreen viewGoods() {
+    @Step("Магазин выбран {value}")
+    public StoreSelectionScreen shouldStoreSelection(String value) {
+        storeAddress.shouldHave(text(value));
+        return this;
+    }
+
+    @Step("Кликнуть Посмотреть товары")
+    public StoreSelectionScreen clickViewGoods() {
         viewGoods.click();
         return this;
     }
-
-    @Step("Магазин выбран")
-    public StoreSelectionScreen assertStoreSelection(String value) {
-        storeAddress.shouldHave(text("Санкт-Петербург, Заневский пр., 71"));
-        return this;
-    }
-
 
 }
