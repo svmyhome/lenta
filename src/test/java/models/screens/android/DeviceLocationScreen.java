@@ -2,7 +2,6 @@ package models.screens.android;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import models.pages.LoginPage;
 
 import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.id;

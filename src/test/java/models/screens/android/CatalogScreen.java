@@ -2,9 +2,7 @@ package models.screens.android;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
-import models.pages.CatalogPanel;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.text;
@@ -18,17 +16,8 @@ public class CatalogScreen {
             placeholder = $(id("1. SearchPlaceholder")),
             goods = $(id("TitleCenter")),
             goodsName = $(accessibilityId("Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 2,5%, без змж, 930г")),
-    goodsArticle = $(id("ProductArticleNumber"));
+            goodsArticle = $(id("ProductArticleNumber"));
     public static final ElementsCollection goodsCount = $$(id("ItemBlock"));
-
-//
-//    $(id("1. SearchPlaceholder")).click();
-//    $(id("1. SearchPlaceholder")).sendKeys("молоко");
-//    $(id("TitleCenter")).click();
-//    $$(id("ItemBlock")).shouldHave(sizeGreaterThanOrEqual(1));
-//    $(accessibilityId("Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 2,5%, без змж, 930г")).click();
-//    $(id("ProductArticleNumber")).shouldHave(text("Арт: 656620"));
-// $$(id("ItemBlock")).shouldHave(sizeGreaterThanOrEqual(1));
 
     @Step("Кликнуть на поиск товара")
     public CatalogScreen clickMainSearch() {
