@@ -16,22 +16,22 @@
 ### Технологии и инструменты:
 
 <div align="center">
-<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="images/logo/IntelliJ_IDEA.png" width="50"/></a>
-<a href="https://www.android.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" title="Android" alt="Android" width="50" height="50"/> </a> 
-<a href="https://developer.android.com/studio"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" title="Android Studio" alt="Android Studio" width="50" height="50"/> </a> 
-<a href="https://github.com/"><img alt="GitHub" height="50" src="images/logo/GitHub.png" width="50"/></a>  
-<a href="https://www.java.com/"><img alt="Java" height="50" src="images/logo/Java_logo.png" width="50"/></a>
-<a href="https://gradle.org/"><img alt="Gradle" height="50" src="images/logo/Gradle.png" width="50"/></a>  
-<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="images/logo/JUnit5.png" width="50"/></a>
-<a href="https://selenide.org/"><img alt="Selenide" height="50" src="images/logo/Selenide.png" width="50"/></a>
-<a href="https://www.browserstack.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/browserstack/browserstack-original.svg" title="Browserstack" alt="Browserstack" width="50" height="50"/> </a>
+<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="45" src="images/logo/IntelliJ_IDEA.png" width="45"/></a>
+<a href="https://www.android.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" title="Android" alt="Android" width="45" height="45"/> </a> 
+<a href="https://developer.android.com/studio"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" title="Android Studio" alt="Android Studio" width="45" height="45"/> </a> 
+<a href="https://github.com/"><img alt="GitHub" height="45" src="images/logo/GitHub.png" width="45"/></a>  
+<a href="https://www.java.com/"><img alt="Java" height="45" src="images/logo/Java_logo.png" width="45"/></a>
+<a href="https://gradle.org/"><img alt="Gradle" height="45" src="images/logo/Gradle.png" width="45"/></a>  
+<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="45" src="images/logo/JUnit5.png" width="45"/></a>
+<a href="https://selenide.org/"><img alt="Selenide" height="45" src="images/logo/Selenide.png" width="45"/></a>
+<a href="https://www.browserstack.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/browserstack/browserstack-original.svg" title="Browserstack" alt="Browserstack" width="45" height="45"/> </a>
 <a href="https://appium.io/"> <img src="images/logo/appium.png" title="Appium" alt="Appium" width="40" height="40"/> </a>
-<a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="images/logo/Selenoid.png" width="50"/></a>
-<a href="https://rest-assured.io/"><img alt="RestAssured" height="50" src="images/logo/RestAssured.png" width="50"/></a>
-<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="images/logo/Jenkins.png" width="50"/></a>
-<a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/AllureReports.png" width="50"/></a>
-<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/logo/AllureTestOps.svg" width="50"/></a>
-<a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.png" width="50"/></a>
+<a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="45" src="images/logo/Selenoid.png" width="45"/></a>
+<a href="https://rest-assured.io/"><img alt="RestAssured" height="45" src="images/logo/RestAssured.png" width="45"/></a>
+<a href="https://www.jenkins.io/"><img alt="Jenkins" height="45" src="images/logo/Jenkins.png" width="45"/></a>
+<a href="https://github.com/allure-framework/"><img alt="Allure Report" height="45" src="images/logo/AllureReports.png" width="45"/></a>
+<a href="https://qameta.io/"><img alt="Allure TestOps" height="45" src="images/logo/AllureTestOps.svg" width="45"/></a>
+<a href="https://telegram.org/"><img alt="Telegram" height="45" src="images/logo/Telegram.png" width="45"/></a>
 </div>
 
 <a id="cases"></a>
