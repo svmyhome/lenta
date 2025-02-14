@@ -30,7 +30,7 @@ import static specifications.ApiSpecifications.statusCode200ResponseSpecificatio
 
 @Slf4j
 @Feature("Магазины")
-@Story("Пользователь может получить информацию о магазинах")
+@Story("Неавторизованный пользователь может получить информацию о магазинах")
 @Owner("Sarychev")
 @Tag("api")
 @DisplayName("Информация о магазинах")

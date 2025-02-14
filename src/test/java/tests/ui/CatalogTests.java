@@ -25,7 +25,7 @@ public class CatalogTests extends TestBase {
     CatalogPanel catalogPanel =new CatalogPanel();
 
     @Test
-    @DisplayName("Переход в каталог 1-го уровня " + CATALOG_NEW_PRODUCTS)
+    @DisplayName("Успешный переход в каталог 1-го уровня " + CATALOG_NEW_PRODUCTS)
     @Severity(SeverityLevel.BLOCKER)
     void openCatalogTest(){
         mainPage.openMainPage()
@@ -36,7 +36,7 @@ public class CatalogTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Переход в каталог 2-го уровня " + CATALOG_DRINKS)
+    @DisplayName("Успешный переход в каталог 2-го уровня " + CATALOG_DRINKS)
     @Severity(SeverityLevel.NORMAL)
     void openCatalogSecondLevelTest(){
         mainPage.openMainPage()

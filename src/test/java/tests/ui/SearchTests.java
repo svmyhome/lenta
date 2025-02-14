@@ -24,7 +24,7 @@ public class SearchTests extends TestBase {
     SearchPage searchPage= new SearchPage();
 
     @Test
-    @DisplayName("Поиск товара через строку поиска находит товар")
+    @DisplayName("Успешный поиск товара через строку поиска")
     @Severity(SeverityLevel.CRITICAL)
     void setSearchInput(){
         mainPage.openMainPage()
