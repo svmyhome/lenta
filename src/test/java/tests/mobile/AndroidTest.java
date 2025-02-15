@@ -1,6 +1,7 @@
 package tests.mobile;
 
 import io.qameta.allure.Feature;
+import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -17,10 +18,10 @@ import static models.api.ApiConstants.SKU_MILK;
 import static models.api.ApiConstants.SKU_MILK_ART;
 import static models.api.ApiConstants.STORE_ADDRESS_SPB;
 
-
+@Layer("android")
 @Feature("Магазины")
 @Story("Пользователь может получить информацию о магазине и товарах в нем")
-@Owner("sarychev")
+@Owner("Petrov")
 @Tag("android")
 @DisplayName("Информация о магазинах и товарах")
 public class AndroidTest extends TestBase {
