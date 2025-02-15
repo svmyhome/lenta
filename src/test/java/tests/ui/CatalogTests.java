@@ -12,10 +12,10 @@ import static models.pages.CatalogPanel.CATALOG_DRINKS;
 import static models.pages.CatalogPanel.CATALOG_NEW_PRODUCTS;
 import static models.pages.CatalogPanel.CATALOG_SKU_DRINKS;
 
-
+@Layer("web")
 @Feature("Каталог")
 @Story("Пользователь может работать с каталогом товаров")
-@Owner("sarychev")
+@Owner("Ivanov")
 @Tag("catalog")
 @Tag("ui")
 @DisplayName("Работа с каталогом")
