@@ -2,6 +2,7 @@ package tests.api;
 
 import helpers.ApiHelper;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -28,6 +29,7 @@ import static specifications.ApiSpecifications.statusCode415RequestSpecification
 import static specifications.ApiSpecifications.statusCode415ResponseSpecification;
 
 
+@Layer("rest")
 @Slf4j
 @Feature("Авторизация")
 @Story("Пользователь не может авторизоваться если в запросе некорректные данные")

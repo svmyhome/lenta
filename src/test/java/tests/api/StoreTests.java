@@ -2,6 +2,7 @@ package tests.api;
 
 import helpers.ApiHelper;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -27,7 +28,7 @@ import static models.api.ApiConstants.STORE_COUNT;
 import static specifications.ApiSpecifications.requestSpecification;
 import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
-
+@Layer("rest")
 @Slf4j
 @Feature("Магазины")
 @Story("Неавторизованный пользователь может получить информацию о магазинах")
