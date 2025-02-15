@@ -25,7 +25,7 @@ public class AuthorizeTests {
     @DisplayName("Успешная авторизация через СМС")
     public void successfulAuthorizeFromSmsTest() {
         step("Открыть главную страницу Lenta.com");
-        step("Авторизоваться пользователем", () -> {
+        step("Ввести авторизационные данные", () -> {
             step("Ввести телефон");
             step("Ввести пароль");
         });
@@ -39,7 +39,7 @@ public class AuthorizeTests {
     @DisplayName("Безуспешная авторизация через СМС, неверный смс код")
     public void unsuccessfulAuthorizeFromWrongSmsTest() {
         step("Открыть главную страницу Lenta.com");
-        step("Авторизоваться пользователем", () -> {
+        step("Ввести авторизационные данные", () -> {
             step("Ввести телефон");
             step("Ввести пароль");
         });
