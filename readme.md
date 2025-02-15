@@ -67,7 +67,8 @@
 ### Запуск тестов в Jenkins
 
 ```
-https://jenkins.autotests.cloud/job/QaLenta/
+https://jenkins.autotests.cloud/job/QaLenta
+https://jenkins.autotests.cloud/job/QaLentaMobile
 ```
 
 Запуск может выполняться как локально, так и удаленно на Selenoid сервере или через browserstack
@@ -106,10 +107,14 @@ gradle clean android -Dplatform=mobile -DdeviceHost=browserstack -DmobileOS=andr
 ### Запуск тестов из Allure, отчеты и уведомления
 
 ### Allure TestOps
-
+```
+https://allure.autotests.cloud/project/4630/test-cases?treeId=9052
+```
+![img.png](img.png)
+![img_1.png](img_1.png)
 
 ### Telegram
-
+![img_2.png](img_2.png)
 
 ## TODO
 
