@@ -28,7 +28,7 @@ import static models.api.ApiConstants.STORE_COUNT;
 import static specifications.ApiSpecifications.requestSpecification;
 import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
-@Layer("api")
+@Layer("rest")
 @Slf4j
 @Feature("Магазины")
 @Story("Неавторизованный пользователь может получить информацию о магазинах")

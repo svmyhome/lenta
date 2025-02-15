@@ -27,7 +27,7 @@ import static models.api.ApiConstants.SKU_VODKA_ARKHANGELSKAYA;
 import static specifications.ApiSpecifications.requestSpecification;
 import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
-@Layer("api")
+@Layer("rest")
 @Slf4j
 @Feature("Товары")
 @Story("Неавторизованный пользователь может получить информацию о товаре")

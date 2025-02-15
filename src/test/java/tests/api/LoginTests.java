@@ -29,7 +29,7 @@ import static specifications.ApiSpecifications.statusCode415RequestSpecification
 import static specifications.ApiSpecifications.statusCode415ResponseSpecification;
 
 
-@Layer("api")
+@Layer("rest")
 @Slf4j
 @Feature("Авторизация")
 @Story("Пользователь не может авторизоваться если в запросе некорректные данные")
