@@ -14,7 +14,7 @@ public class ProjectSettings {
     public static final boolean isRemoteStartWeb = environmentType.equals("remote");
 
     public static final String mobileOS = System.getProperty("mobileOS", "android");
-    public static final String deviceHost = System.getProperty("deviceHost", "local");
+    public static final String deviceHost = System.getProperty("deviceHost", "real");
     public static final boolean isBrowserStackDevice = "browserstack".equals(deviceHost);
     public static final boolean isAndroid = mobileOS.equals("android");
 

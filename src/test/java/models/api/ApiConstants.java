@@ -7,8 +7,8 @@ public class ApiConstants {
     public static final String SKU_BREAD = "хлеб";
     public static final String SKU_IDS = "0177";
     public static final String SKU_MILK = "молоко";
-    public static final String SKU_MILK_ART = "Арт: 656620";
-    public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 2,5%, без змж, 930г";
+    public static final String SKU_MILK_ART = "Арт: 435450";
+    public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
 
     public static final String STORE_CODE = "0067";
     public static final String STORE_ADDRESS_LENINA = "ул. Ленина, д. 132";
