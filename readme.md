@@ -6,11 +6,10 @@
 - [Технологии и инструменты](#tools)
 - [Тестовое покрытие](#cases)
 - [Локальный запуск тестов](#localrun)
-- [Запуск тестов в Jenkins](#remoterun)
-- [Allure отчёт](#report)
-- [Интеграция с Allure TestOps](#testops)
-- [Уведомления в Telegram](#telegram)
-- [Видео с примером запуска тестов в Selenoid](#video)
+- [Запуск тестов в Jenkins](#jenkinsrun)
+- [Как запускать](#howrun)
+- [Запуск тестов из Allure, отчеты и уведомления отчёт](#report)
+
 
 <a id="tools"></a>
 ### Технологии и инструменты:
@@ -63,7 +62,7 @@
     - Успешный поиск товара через строку поиск
     - Успешный выбор товара через строку поиска
 
-
+<a id="jenkinsrun"></a>
 ### Запуск тестов в Jenkins
 
 ```
@@ -73,8 +72,9 @@ https://jenkins.autotests.cloud/job/QaLentaMobile
 
 Запуск может выполняться как локально, так и удаленно на Selenoid сервере или через browserstack
 
-### Запуск
 
+<a id="howrun"></a>
+### Как запускать
 #### Локально Web
 ```
 gradle clean ui -Dplatform=web
@@ -104,25 +104,16 @@ gradle clean android -Dplatform=mobile -DdeviceHost=emulation -DmobileOS=android
 gradle clean android -Dplatform=mobile -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro
 ```
 
+<a id="report"></a>
 ### Запуск тестов из Allure, отчеты и уведомления
 
 ### Allure TestOps
 ```
 https://allure.autotests.cloud/project/4630/test-cases?treeId=9052
 ```
-![img.png](img.png)
-![img_1.png](img_1.png)
+![allure1.png](images/screenshot/allure1.png)
+![allure2.png](images/screenshot/allure2.png)
+
 
 ### Telegram
-![img_2.png](img_2.png)
-
-## TODO
-
-- [X] Запуск в Jenkins
-  - [ ] переделать на paip
-- [X] Подключить аллюр
-- [X] Подключить telegramm
-- [X] Дописать автотесты по UI
-- [X] Дописать автотетсы по АПИ
-- [X] Дописать автотесты по Mobile
-- [ ] Сделать скриншоты и описание
+![allure3.png](images/screenshot/allure3.png)
