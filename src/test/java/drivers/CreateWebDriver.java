@@ -22,8 +22,8 @@ public class CreateWebDriver {
         Configuration.browser = webDriverConfig.getBrowserName();
         Configuration.browserSize = webDriverConfig.getBrowserSize();
         if (isRemoteStartWeb) {
-            AuthConfig authConfig = ConfigFactory
-                    .create(AuthConfig.class, System.getProperties());
+//            AuthConfig authConfig = ConfigFactory
+//                    .create(AuthConfig.class, System.getProperties());
             Configuration.remote = "https://" + SELENOID_USER_NAME + ":" + SELENOID_PASSWORD + webDriverConfig.getRemoteUrl();
             Configuration.browserVersion = webDriverConfig.getBrowserVersion();
             DesiredCapabilities capabilities = new DesiredCapabilities();
