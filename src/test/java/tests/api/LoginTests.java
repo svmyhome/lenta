@@ -1,6 +1,6 @@
 package tests.api;
 
-import helpers.ApiHelper;
+import common.helpers.ApiHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
@@ -8,9 +8,9 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import lombok.extern.slf4j.Slf4j;
-import models.api.login.LoginOtpRequest;
-import models.api.login.UnsupportedMediaTypeResponse;
-import models.api.login.UserIsNotApprovedResponse;
+import api.models.login.LoginOtpRequest;
+import api.models.login.UnsupportedMediaTypeResponse;
+import api.models.login.UserIsNotApprovedResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -18,15 +18,15 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static models.api.ApiConstants.LOGINOTP;
-import static models.api.ApiConstants.UNSUPPORTED_MEDIA_TYPE_ERROR;
-import static models.api.ApiConstants.UNSUPPORTED_MEDIA_TYPE_MESSAGE;
-import static models.api.ApiConstants.USER_IS_NOT_APPROVED_ERROR;
-import static models.api.ApiConstants.USER_IS_NOT_APPROVED_MESSAGE;
-import static specifications.ApiSpecifications.requestSpecification;
-import static specifications.ApiSpecifications.statusCode403ResponseSpecification;
-import static specifications.ApiSpecifications.statusCode415RequestSpecification;
-import static specifications.ApiSpecifications.statusCode415ResponseSpecification;
+import static api.models.ApiConstants.LOGINOTP;
+import static api.models.ApiConstants.UNSUPPORTED_MEDIA_TYPE_ERROR;
+import static api.models.ApiConstants.UNSUPPORTED_MEDIA_TYPE_MESSAGE;
+import static api.models.ApiConstants.USER_IS_NOT_APPROVED_ERROR;
+import static api.models.ApiConstants.USER_IS_NOT_APPROVED_MESSAGE;
+import static api.specifications.ApiSpecifications.requestSpecification;
+import static api.specifications.ApiSpecifications.statusCode403ResponseSpecification;
+import static api.specifications.ApiSpecifications.statusCode415RequestSpecification;
+import static api.specifications.ApiSpecifications.statusCode415ResponseSpecification;
 
 
 @Layer("rest")

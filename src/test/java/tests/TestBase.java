@@ -4,7 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.CreateMobileDriver;
-import helpers.Attach;
+import common.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,10 +13,10 @@ import org.junit.jupiter.api.TestInfo;
 
 import static com.codeborne.selenide.Selenide.open;
 import static drivers.CreateWebDriver.webDriverConfig;
-import static helpers.ProjectSettings.isBrowserStackDevice;
-import static helpers.ProjectSettings.isMobile;
-import static helpers.ProjectSettings.isRemoteStartWeb;
-import static helpers.ProjectSettings.isWeb;
+import static common.ProjectSettings.isBrowserStackDevice;
+import static common.ProjectSettings.isMobile;
+import static common.ProjectSettings.isRemoteStartWeb;
+import static common.ProjectSettings.isWeb;
 
 public class TestBase {
 

@@ -6,17 +6,17 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import models.screens.android.DeviceLocationScreen;
-import models.screens.android.ProductSelectionScreen;
-import models.screens.android.StoreSelectionScreen;
+import mobile.screens.android.DeviceLocationScreen;
+import mobile.screens.android.ProductSelectionScreen;
+import mobile.screens.android.StoreSelectionScreen;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-import static models.api.ApiConstants.SKU_MILK;
-import static models.api.ApiConstants.SKU_MILK_ART;
-import static models.api.ApiConstants.STORE_ADDRESS_SPB;
+import static api.models.ApiConstants.SKU_MILK;
+import static api.models.ApiConstants.SKU_MILK_ART;
+import static api.models.ApiConstants.STORE_ADDRESS_SPB;
 
 @Layer("android")
 @Feature("Магазины")

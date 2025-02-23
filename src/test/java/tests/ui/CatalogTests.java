@@ -6,16 +6,16 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import models.pages.CatalogPanel;
-import models.pages.MainPage;
+import web.pages.CatalogPanel;
+import web.pages.MainPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-import static models.pages.CatalogPanel.CATALOG_DRINKS;
-import static models.pages.CatalogPanel.CATALOG_NEW_PRODUCTS;
-import static models.pages.CatalogPanel.CATALOG_SKU_DRINKS;
+import static web.pages.CatalogPanel.CATALOG_DRINKS;
+import static web.pages.CatalogPanel.CATALOG_NEW_PRODUCTS;
+import static web.pages.CatalogPanel.CATALOG_SKU_DRINKS;
 
 @Layer("web")
 @Feature("Каталог")

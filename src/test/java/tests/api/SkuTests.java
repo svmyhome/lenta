@@ -1,6 +1,6 @@
 package tests.api;
 
-import helpers.ApiHelper;
+import common.helpers.ApiHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
@@ -9,8 +9,8 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
-import models.api.sku.CatalogSearchRequest;
-import models.api.sku.SkuResponse;
+import api.models.sku.CatalogSearchRequest;
+import api.models.sku.SkuResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -18,14 +18,14 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static models.api.ApiConstants.CATALOG_SEARCH;
-import static models.api.ApiConstants.NAME_VODKA_ARKHANGELSKAYA;
-import static models.api.ApiConstants.SKUS_NAME;
-import static models.api.ApiConstants.SKU_BREAD;
-import static models.api.ApiConstants.SKU_IDS;
-import static models.api.ApiConstants.SKU_VODKA_ARKHANGELSKAYA;
-import static specifications.ApiSpecifications.requestSpecification;
-import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
+import static api.models.ApiConstants.CATALOG_SEARCH;
+import static api.models.ApiConstants.NAME_VODKA_ARKHANGELSKAYA;
+import static api.models.ApiConstants.SKUS_NAME;
+import static api.models.ApiConstants.SKU_BREAD;
+import static api.models.ApiConstants.SKU_IDS;
+import static api.models.ApiConstants.SKU_VODKA_ARKHANGELSKAYA;
+import static api.specifications.ApiSpecifications.requestSpecification;
+import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
 @Layer("rest")
 @Slf4j

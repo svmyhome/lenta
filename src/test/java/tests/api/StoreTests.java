@@ -1,6 +1,6 @@
 package tests.api;
 
-import helpers.ApiHelper;
+import common.helpers.ApiHelper;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
@@ -9,9 +9,9 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
-import models.api.stores.delivery.DeliveryRequest;
-import models.api.stores.delivery.response.DeliveryModeResponse;
-import models.api.stores.store.StoreResponse;
+import api.models.stores.delivery.DeliveryRequest;
+import api.models.stores.delivery.response.DeliveryModeResponse;
+import api.models.stores.store.StoreResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -19,14 +19,14 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static models.api.ApiConstants.DELIVERY_MODE_GET;
-import static models.api.ApiConstants.STORES;
-import static models.api.ApiConstants.STORE_ADDRESS_LENINA;
-import static models.api.ApiConstants.STORE_CITY;
-import static models.api.ApiConstants.STORE_CODE;
-import static models.api.ApiConstants.STORE_COUNT;
-import static specifications.ApiSpecifications.requestSpecification;
-import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
+import static api.models.ApiConstants.DELIVERY_MODE_GET;
+import static api.models.ApiConstants.STORES;
+import static api.models.ApiConstants.STORE_ADDRESS_LENINA;
+import static api.models.ApiConstants.STORE_CITY;
+import static api.models.ApiConstants.STORE_CODE;
+import static api.models.ApiConstants.STORE_COUNT;
+import static api.specifications.ApiSpecifications.requestSpecification;
+import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
 @Layer("rest")
 @Slf4j
