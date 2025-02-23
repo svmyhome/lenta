@@ -24,12 +24,12 @@ import static models.pages.SearchPage.MILK;
 public class SearchTests extends TestBase {
 
     MainPage mainPage = new MainPage();
-    SearchPage searchPage= new SearchPage();
+    SearchPage searchPage = new SearchPage();
 
     @Test
     @DisplayName("Успешный поиск товара через строку поиска")
     @Severity(SeverityLevel.CRITICAL)
-    void setSearchInput(){
+    void setSearchInput() {
         mainPage.openMainPage()
                 .closeToolTip();
         mainPage.openSearch()

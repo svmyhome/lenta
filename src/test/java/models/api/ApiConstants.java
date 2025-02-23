@@ -29,5 +29,4 @@ public class ApiConstants {
     public static final String DELIVERY_MODE_GET = "/jrpc/deliveryModeGet";
 
 
-
 }

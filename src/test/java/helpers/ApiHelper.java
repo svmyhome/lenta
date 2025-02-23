@@ -9,7 +9,7 @@ public class ApiHelper {
     @Step("Полученное значение совпадает c {expected}")
     public ApiHelper assertValues(String expected, String actual) {
         assertThat(expected).isEqualTo(actual);
-    return this;
+        return this;
     }
 
     @Step("Количество равно {expected}")

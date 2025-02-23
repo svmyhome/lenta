@@ -30,7 +30,6 @@ public class ApiSpecifications {
             .headers(headers);
 
 
-
     public static ResponseSpecification statusCode200ResponseSpecification = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .log(STATUS)

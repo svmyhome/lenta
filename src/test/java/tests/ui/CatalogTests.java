@@ -1,6 +1,11 @@
 package tests.ui;
 
-import io.qameta.allure.*;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Layer;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import models.pages.CatalogPanel;
 import models.pages.MainPage;
 import org.junit.jupiter.api.DisplayName;
@@ -22,12 +27,12 @@ import static models.pages.CatalogPanel.CATALOG_SKU_DRINKS;
 public class CatalogTests extends TestBase {
 
     MainPage mainPage = new MainPage();
-    CatalogPanel catalogPanel =new CatalogPanel();
+    CatalogPanel catalogPanel = new CatalogPanel();
 
     @Test
     @DisplayName("Успешный переход в каталог 1-го уровня " + CATALOG_NEW_PRODUCTS)
     @Severity(SeverityLevel.BLOCKER)
-    void openCatalogTest(){
+    void openCatalogTest() {
         mainPage.openMainPage()
                 .closeToolTip();
         mainPage.openCatalog();
@@ -38,7 +43,7 @@ public class CatalogTests extends TestBase {
     @Test
     @DisplayName("Успешный переход в каталог 2-го уровня " + CATALOG_DRINKS)
     @Severity(SeverityLevel.NORMAL)
-    void openCatalogSecondLevelTest(){
+    void openCatalogSecondLevelTest() {
         mainPage.openMainPage()
                 .closeToolTip();
         mainPage.openCatalog();
