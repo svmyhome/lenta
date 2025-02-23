@@ -13,7 +13,6 @@
 
 <a id="tools"></a>
 ### Технологии и инструменты:
-
 <div align="center">
 <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="45" src="images/logo/IntelliJ_IDEA.png" width="45"/></a>
 <a href="https://www.android.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" title="Android" alt="Android" width="45" height="45"/> </a> 
@@ -32,6 +31,27 @@
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="45" src="images/logo/AllureTestOps.svg" width="45"/></a>
 <a href="https://telegram.org/"><img alt="Telegram" height="45" src="images/logo/Telegram.png" width="45"/></a>
 </div>
+
+- #### Язык программирования Java
+- #### Системы сборки и управления зависимостями Gradle
+- #### Интегрированные среды разработки
+  - IntelliJ IDEA
+  - Android Studio
+- #### Тестирование
+  - JUnit 5 — фреймворк для модульного тестирования Java-приложений
+  - Selenide — фреймворк для автоматизации тестирования веб-приложений. Упрощает работу с Selenium
+  - Appium — инструмент для автоматизации тестирования мобильных приложений (iOS и Android)
+  - RestAssured — библиотека для тестирования REST API
+  - Selenoid — инструмент для запуска тестов в контейнерах Docker
+- #### Инфраструктура и CI/CD
+  - Jenkins — сервер для непрерывной интеграции и доставки (CI/CD)
+  - BrowserStack — облачная платформа для тестирования веб- и мобильных приложений на реальных устройствах и браузерах.
+- #### Отчеты и информирование
+  - Allure Report — фреймворк для создания визуальных и детализированных отчетов о результатах тестирования.
+  - Allure TestOps — платформа для управления тестами, интеграции с CI/CD и анализа результатов тестирования.
+  - Telegram — мессенджер, в который направляются уведомления.
+- #### Версионный контроль GitHub
+
 
 <a id="cases"></a>
 ### Тестовое покрытие
