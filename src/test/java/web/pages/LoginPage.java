@@ -10,8 +10,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
 
-    public static final String SEND_SMS = "Мы отправили код на номер";
-
     private final SelenideElement loginButton = $("[automation-id='login-button']"),
             authorizationWindow = $("[automation-id=dialog-auth]"),
             getCodeButton = $(".lui-button"),

@@ -7,8 +7,6 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SearchPage {
-    public static final String MILK = "молоко";
-
 
     private final static SelenideElement searchTitle = $(".head h1");
 

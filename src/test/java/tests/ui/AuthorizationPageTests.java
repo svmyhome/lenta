@@ -1,20 +1,18 @@
 package tests.ui;
 
 import io.qameta.allure.Feature;
-import qameta.allure.Layer;
-import qameta.allure.Microservice;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import web.pages.LoginPage;
-import web.pages.MainPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qameta.allure.Layer;
+import qameta.allure.Microservice;
 import tests.TestBase;
-
-import static web.pages.LoginPage.SEND_SMS;
+import web.pages.LoginPage;
+import web.pages.MainPage;
 
 @Layer("web")
 @Microservice("checkout")
@@ -23,8 +21,9 @@ import static web.pages.LoginPage.SEND_SMS;
 @Owner("Ivanov")
 @Tag("ui")
 @DisplayName("Авторизация через номер телефона")
-public class LoginPageTests extends TestBase {
+public class AuthorizationPageTests extends TestBase {
 
+    public static final String SEND_SMS = "Мы отправили код на номер";
     final MainPage mainPage = new MainPage();
     final LoginPage loginPage = new LoginPage();
 

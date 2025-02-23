@@ -1,19 +1,17 @@
 package tests.ui;
 
 import io.qameta.allure.Feature;
-import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import web.pages.MainPage;
-import web.pages.SearchPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qameta.allure.Layer;
 import tests.TestBase;
-
-import static web.pages.SearchPage.MILK;
+import web.pages.MainPage;
+import web.pages.SearchPage;
 
 @Layer("web")
 @Feature("Поиск")
@@ -21,8 +19,9 @@ import static web.pages.SearchPage.MILK;
 @Owner("Ivanov")
 @Tag("ui")
 @DisplayName("Поиск товара")
-public class SearchTests extends TestBase {
+public class ProductSearchTests extends TestBase {
 
+    public static final String MILK = "молоко";
     final MainPage mainPage = new MainPage();
     final SearchPage searchPage = new SearchPage();
 

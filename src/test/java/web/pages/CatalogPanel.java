@@ -10,10 +10,6 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class CatalogPanel {
 
-    public static final String CATALOG_NEW_PRODUCTS = "Новинки";
-    public static final String CATALOG_DRINKS = "Напитки";
-    public static final String CATALOG_SKU_DRINKS = "napitki-19314";
-
     public static final ElementsCollection mainCat = $$("[automation-id=mainCat]");
     public static final SelenideElement firstLevelCatalogTitle = $("div h1");
     public static final SelenideElement secondLevelCatalogTitle = $("div h1");

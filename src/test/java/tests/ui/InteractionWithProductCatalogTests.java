@@ -1,31 +1,30 @@
 package tests.ui;
 
 import io.qameta.allure.Feature;
-import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import web.pages.CatalogPanel;
-import web.pages.MainPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qameta.allure.Layer;
 import tests.TestBase;
-
-import static web.pages.CatalogPanel.CATALOG_DRINKS;
-import static web.pages.CatalogPanel.CATALOG_NEW_PRODUCTS;
-import static web.pages.CatalogPanel.CATALOG_SKU_DRINKS;
+import web.pages.CatalogPanel;
+import web.pages.MainPage;
 
 @Layer("web")
 @Feature("Каталог")
-@Story("Пользователь может работать с каталогом товаров")
+@Story("Пользователь может взаимодействовать с каталогом товаров")
 @Owner("Ivanov")
 @Tag("catalog")
 @Tag("ui")
-@DisplayName("Работа с каталогом")
-public class CatalogTests extends TestBase {
+@DisplayName("Взаимодействие с каталогом")
+public class InteractionWithProductCatalogTests extends TestBase {
 
+    public static final String CATALOG_NEW_PRODUCTS = "Новинки";
+    public static final String CATALOG_DRINKS = "Напитки";
+    public static final String CATALOG_SKU_DRINKS = "napitki-19314";
     final MainPage mainPage = new MainPage();
     final CatalogPanel catalogPanel = new CatalogPanel();
 
