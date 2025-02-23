@@ -7,7 +7,7 @@ import java.net.URL;
 public class LocalHelper {
     public static URL getLocalUrl() {
         try {
-            return new URL("http://192.168.0.36:4723");
+            return new URL("http://192.168.31.143:4723");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
