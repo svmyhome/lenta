@@ -37,7 +37,7 @@ import static specifications.ApiSpecifications.statusCode415ResponseSpecificatio
 @Tag("api")
 @DisplayName("Ошибки авторизации")
 public class LoginTests extends TestBase {
-    ApiHelper api = new ApiHelper();
+    final ApiHelper api = new ApiHelper();
 
     public final LoginOtpRequest loginOtpRequest = new LoginOtpRequest("79535006575");
 

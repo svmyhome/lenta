@@ -25,8 +25,8 @@ import static models.pages.LoginPage.SEND_SMS;
 @DisplayName("Авторизация через номер телефона")
 public class LoginPageTests extends TestBase {
 
-    MainPage mainPage = new MainPage();
-    LoginPage loginPage = new LoginPage();
+    final MainPage mainPage = new MainPage();
+    final LoginPage loginPage = new LoginPage();
 
     @Test
     @DisplayName("Кнопка 'Получить код' не активна до ввода номера телефона")

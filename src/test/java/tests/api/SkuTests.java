@@ -35,7 +35,7 @@ import static specifications.ApiSpecifications.statusCode200ResponseSpecificatio
 @Tag("api")
 @DisplayName("Информация о товарах")
 public class SkuTests extends TestBase {
-    ApiHelper api = new ApiHelper();
+    final ApiHelper api = new ApiHelper();
 
     @Test
     @DisplayName("Успешное получение данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA)

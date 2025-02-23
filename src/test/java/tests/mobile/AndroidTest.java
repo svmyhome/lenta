@@ -25,9 +25,9 @@ import static models.api.ApiConstants.STORE_ADDRESS_SPB;
 @Tag("android")
 @DisplayName("Информация о магазинах и товарах")
 public class AndroidTest extends TestBase {
-    DeviceLocationScreen deviceLocationScreen = new DeviceLocationScreen();
-    StoreSelectionScreen storeSelectionScreen = new StoreSelectionScreen();
-    ProductSelectionScreen catalogScreen = new ProductSelectionScreen();
+    final DeviceLocationScreen deviceLocationScreen = new DeviceLocationScreen();
+    final StoreSelectionScreen storeSelectionScreen = new StoreSelectionScreen();
+    final ProductSelectionScreen catalogScreen = new ProductSelectionScreen();
 
     @Test
     @DisplayName("Успешный выбор магазин через строку поиска")

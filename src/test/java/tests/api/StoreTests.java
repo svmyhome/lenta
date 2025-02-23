@@ -36,7 +36,7 @@ import static specifications.ApiSpecifications.statusCode200ResponseSpecificatio
 @Tag("api")
 @DisplayName("Информация о магазинах")
 public class StoreTests extends TestBase {
-    ApiHelper api = new ApiHelper();
+    final ApiHelper api = new ApiHelper();
 
     @Test
     @DisplayName("Успешное получение данных о магазине номер " + STORE_CODE)

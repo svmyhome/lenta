@@ -14,7 +14,7 @@ public class LoginPage {
 
     private final SelenideElement loginButton = $("[automation-id='login-button']"),
             authorizationWindow = $("[automation-id=dialog-auth]"),
-            getCodeButton = $("input[value='Получить код']"),
+            getCodeButton = $(".lui-button"),
             phoneInput = $("input[type=tel]"),
             smsInput = $(".loginbox__text");
 

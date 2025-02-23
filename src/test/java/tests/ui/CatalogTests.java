@@ -26,8 +26,8 @@ import static models.pages.CatalogPanel.CATALOG_SKU_DRINKS;
 @DisplayName("Работа с каталогом")
 public class CatalogTests extends TestBase {
 
-    MainPage mainPage = new MainPage();
-    CatalogPanel catalogPanel = new CatalogPanel();
+    final MainPage mainPage = new MainPage();
+    final CatalogPanel catalogPanel = new CatalogPanel();
 
     @Test
     @DisplayName("Успешный переход в каталог 1-го уровня " + CATALOG_NEW_PRODUCTS)
