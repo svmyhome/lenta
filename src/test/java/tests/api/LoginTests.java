@@ -2,7 +2,7 @@ package tests.api;
 
 import common.helpers.ApiHelper;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
+import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -18,11 +18,6 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static api.models.ApiConstants.LOGINOTP;
-import static api.models.ApiConstants.UNSUPPORTED_MEDIA_TYPE_ERROR;
-import static api.models.ApiConstants.UNSUPPORTED_MEDIA_TYPE_MESSAGE;
-import static api.models.ApiConstants.USER_IS_NOT_APPROVED_ERROR;
-import static api.models.ApiConstants.USER_IS_NOT_APPROVED_MESSAGE;
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode403ResponseSpecification;
 import static api.specifications.ApiSpecifications.statusCode415RequestSpecification;
@@ -37,6 +32,11 @@ import static api.specifications.ApiSpecifications.statusCode415ResponseSpecific
 @Tag("api")
 @DisplayName("Ошибки авторизации")
 public class LoginTests extends TestBase {
+    public static final String USER_IS_NOT_APPROVED_MESSAGE = "Нет аккаунта с таким номером телефона. Проверьте цифры, пожалуйста, или зарегистрируйтесь.";
+    public static final String USER_IS_NOT_APPROVED_ERROR = "DbUserIsNotApproved";
+    public static final String UNSUPPORTED_MEDIA_TYPE_MESSAGE = "Запрашиваемый media-type не поддерживается.";
+    public static final String UNSUPPORTED_MEDIA_TYPE_ERROR = "UnsupportedMediaType";
+    public static final String LOGINOTP = "/api/v1/authentication/loginotp";
     final ApiHelper api = new ApiHelper();
 
     public final LoginOtpRequest loginOtpRequest = new LoginOtpRequest("79535006575");

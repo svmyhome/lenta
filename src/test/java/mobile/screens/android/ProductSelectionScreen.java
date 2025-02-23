@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.appium.java_client.AppiumBy.id;
-import static api.models.ApiConstants.SKU_MILK_LONG_NAME;
+import static tests.api.SkuTests.SKU_MILK_LONG_NAME;
 
 public class ProductSelectionScreen {
     public static final SelenideElement findProducts = $(id("mainSearch")),

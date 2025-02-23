@@ -1,8 +1,8 @@
 package tests.manual;
 
 import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
-import io.qameta.allure.Manual;
+import qameta.allure.Layer;
+import qameta.allure.Manual;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 @Manual
 @Owner("Sidorov")
 @DisplayName("Авторизация через номер телефона")
-public class AuthorizeTests {
+public class PhoneAuthorizationTests {
 
     @Test
     @Manual

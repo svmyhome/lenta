@@ -2,7 +2,7 @@ package tests.api;
 
 import common.helpers.ApiHelper;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
+import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -19,12 +19,6 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static api.models.ApiConstants.DELIVERY_MODE_GET;
-import static api.models.ApiConstants.STORES;
-import static api.models.ApiConstants.STORE_ADDRESS_LENINA;
-import static api.models.ApiConstants.STORE_CITY;
-import static api.models.ApiConstants.STORE_CODE;
-import static api.models.ApiConstants.STORE_COUNT;
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
@@ -36,6 +30,13 @@ import static api.specifications.ApiSpecifications.statusCode200ResponseSpecific
 @Tag("api")
 @DisplayName("Информация о магазинах")
 public class StoreTests extends TestBase {
+    public static final String STORE_CODE = "0067";
+    public static final String STORE_ADDRESS_LENINA = "ул. Ленина, д. 132";
+    public static final String STORE_CITY = "Альметьевск";
+    public static final int STORE_COUNT = 662;
+    public static final String STORE_ADDRESS_SPB = "Санкт-Петербург, Заневский пр., 71";
+    public static final String STORES = "/api/v1/stores/";
+    public static final String DELIVERY_MODE_GET = "/jrpc/deliveryModeGet";
     final ApiHelper api = new ApiHelper();
 
     @Test
@@ -55,7 +56,6 @@ public class StoreTests extends TestBase {
                     .assertValues(storeResponse.address(), STORE_ADDRESS_LENINA)
                     .assertValues(storeResponse.cityName(), (STORE_CITY));
         });
-
     }
 
     @Test

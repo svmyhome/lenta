@@ -1,7 +1,7 @@
 package tests.mobile;
 
 import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
+import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -14,9 +14,9 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-import static api.models.ApiConstants.SKU_MILK;
-import static api.models.ApiConstants.SKU_MILK_ART;
-import static api.models.ApiConstants.STORE_ADDRESS_SPB;
+import static tests.api.SkuTests.SKU_MILK;
+import static tests.api.SkuTests.SKU_MILK_ART;
+import static tests.api.StoreTests.STORE_ADDRESS_SPB;
 
 @Layer("android")
 @Feature("Магазины")

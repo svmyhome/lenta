@@ -1,4 +1,6 @@
-package io.qameta.allure;
+package qameta.allure;
+
+import io.qameta.allure.LabelAnnotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

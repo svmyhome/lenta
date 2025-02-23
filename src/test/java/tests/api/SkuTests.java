@@ -2,7 +2,7 @@ package tests.api;
 
 import common.helpers.ApiHelper;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
+import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -18,12 +18,6 @@ import tests.TestBase;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static api.models.ApiConstants.CATALOG_SEARCH;
-import static api.models.ApiConstants.NAME_VODKA_ARKHANGELSKAYA;
-import static api.models.ApiConstants.SKUS_NAME;
-import static api.models.ApiConstants.SKU_BREAD;
-import static api.models.ApiConstants.SKU_IDS;
-import static api.models.ApiConstants.SKU_VODKA_ARKHANGELSKAYA;
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
@@ -35,6 +29,15 @@ import static api.specifications.ApiSpecifications.statusCode200ResponseSpecific
 @Tag("api")
 @DisplayName("Информация о товарах")
 public class SkuTests extends TestBase {
+    public static final String SKU_VODKA_ARKHANGELSKAYA = "354331";
+    public static final String NAME_VODKA_ARKHANGELSKAYA = "Водка АРХАНГЕЛЬСКАЯ Северная выдержка 40%, 0.5л";
+    public static final String SKU_BREAD = "хлеб";
+    public static final String SKU_IDS = "0177";
+    public static final String SKU_MILK = "молоко";
+    public static final String SKU_MILK_ART = "Арт: 435450";
+    public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
+    public static final String SKUS_NAME = "/api/v1/skus/%s/name";
+    public static final String CATALOG_SEARCH = "/api/v1/stores/0012/catalog/search/?value=";
     final ApiHelper api = new ApiHelper();
 
     @Test

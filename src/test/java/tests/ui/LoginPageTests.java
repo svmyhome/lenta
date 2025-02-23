@@ -1,8 +1,8 @@
 package tests.ui;
 
 import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
-import io.qameta.allure.Microservice;
+import qameta.allure.Layer;
+import qameta.allure.Microservice;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
