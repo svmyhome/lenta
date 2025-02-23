@@ -22,6 +22,8 @@ public class ProjectSettings {
         final static AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
         public static final String USER_NAME = System.getProperty("userBrowserStack", config.getUserName());
         public static final String PASSWORD = System.getProperty("passwordBrowserStack", config.getPassword());
+        public static final String SELENOID_USER_NAME = System.getProperty("selenoidUser", config.selenoidUser());
+        public static final String SELENOID_PASSWORD = System.getProperty("selenoidPassword", config.selenoindPassword());
     }
 
     public static class ProjectConfiguration {

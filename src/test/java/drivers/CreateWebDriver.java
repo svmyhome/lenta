@@ -9,6 +9,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+import static helpers.ProjectSettings.Credentials.SELENOID_PASSWORD;
+import static helpers.ProjectSettings.Credentials.SELENOID_USER_NAME;
 import static helpers.ProjectSettings.isRemoteStartWeb;
 
 public class CreateWebDriver {
@@ -22,7 +24,7 @@ public class CreateWebDriver {
         if (isRemoteStartWeb) {
             AuthConfig authConfig = ConfigFactory
                     .create(AuthConfig.class, System.getProperties());
-            Configuration.remote = "https://" + authConfig.selenoidUser() + ":" + authConfig.selenoindPassword() + webDriverConfig.getRemoteUrl();
+            Configuration.remote = "https://" + SELENOID_USER_NAME + ":" + SELENOID_PASSWORD + webDriverConfig.getRemoteUrl();
             Configuration.browserVersion = webDriverConfig.getBrowserVersion();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
