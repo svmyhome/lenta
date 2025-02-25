@@ -11,7 +11,7 @@ public class SearchPage {
     private final static SelenideElement searchTitle = $(".head h1");
 
     @Step("Товар {value} найден через поиск")
-    public SearchPage getTitle(String value) {
+    public SearchPage shouldItemFoundViaSearchBar(String value) {
         searchTitle.shouldHave(text(value));
         return this;
     }

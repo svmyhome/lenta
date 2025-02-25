@@ -14,7 +14,7 @@ public class CatalogPanel {
     public static final SelenideElement firstLevelCatalogTitle = $("div h1");
     public static final SelenideElement secondLevelCatalogTitle = $("div h1");
 
-    @Step("Открыта главная страница каталога {value}")
+    @Step("Открыть главную страницу каталога {value}")
     public CatalogPanel openFirstLevelCatalog(String value) {
         mainCat.filterBy(text(value)).first().click();
         return this;
@@ -27,12 +27,12 @@ public class CatalogPanel {
     }
 
     @Step("Отображается состав каталога 1-го уровня")
-    public CatalogPanel hoverOnCatalog(String value) {
+    public CatalogPanel shouldFirstLevelCatalogContentDisplayedOnHover(String value) {
         mainCat.filterBy(text(value)).first().hover();
         return this;
     }
 
-    @Step("Открыта страница каталога 2-го уровня {value}")
+    @Step("Открыть страницу каталога 2-го уровня {value}")
     public CatalogPanel openSecondLevelCatalog(String value) {
         String catalog = String.format("[href=\"https://lenta.com/catalog/%s/\"]", value);
         $(catalog).click();

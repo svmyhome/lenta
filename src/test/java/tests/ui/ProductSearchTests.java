@@ -21,7 +21,7 @@ import web.pages.SearchPage;
 @DisplayName("Поиск товара")
 public class ProductSearchTests extends TestBase {
 
-    public static final String MILK = "молоко";
+    private static final String MILK = "молоко";
     final MainPage mainPage = new MainPage();
     final SearchPage searchPage = new SearchPage();
 
@@ -30,9 +30,9 @@ public class ProductSearchTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     void setSearchInput() {
         mainPage.openMainPage()
-                .closeToolTip();
+                .closeStoreSelectionTooltip();
         mainPage.openSearch()
                 .fillItemSearchEnter(MILK);
-        searchPage.getTitle(MILK);
+        searchPage.shouldItemFoundViaSearchBar(MILK);
     }
 }

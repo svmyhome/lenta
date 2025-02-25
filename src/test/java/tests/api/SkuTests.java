@@ -30,13 +30,10 @@ import static io.restassured.RestAssured.given;
 @Tag("api")
 @DisplayName("Информация о товарах")
 public class SkuTests extends TestBase {
-    public static final String SKU_VODKA_ARKHANGELSKAYA = "354331";
-    public static final String NAME_VODKA_ARKHANGELSKAYA = "Водка АРХАНГЕЛЬСКАЯ Северная выдержка 40%, 0.5л";
-    public static final String SKU_BREAD = "хлеб";
-    public static final String SKU_IDS = "0177";
-    public static final String SKU_MILK = "молоко";
-    public static final String SKU_MILK_ART = "Арт: 435450";
-    public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
+    private static final String SKU_VODKA_ARKHANGELSKAYA = "354331";
+    private static final String NAME_VODKA_ARKHANGELSKAYA = "Водка АРХАНГЕЛЬСКАЯ Северная выдержка 40%, 0.5л";
+    private static final String SKU_BREAD = "хлеб";
+    private static final String SKU_IDS = "0177";
     final ApiSteps api = new ApiSteps();
 
     @Test

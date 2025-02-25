@@ -33,10 +33,10 @@ import static io.restassured.RestAssured.given;
 @Tag("api")
 @DisplayName("Ошибки авторизации")
 public class LoginTests extends TestBase {
-    public static final String USER_IS_NOT_APPROVED_MESSAGE = "Нет аккаунта с таким номером телефона. Проверьте цифры, пожалуйста, или зарегистрируйтесь.";
-    public static final String USER_IS_NOT_APPROVED_ERROR = "DbUserIsNotApproved";
-    public static final String UNSUPPORTED_MEDIA_TYPE_MESSAGE = "Запрашиваемый media-type не поддерживается.";
-    public static final String UNSUPPORTED_MEDIA_TYPE_ERROR = "UnsupportedMediaType";
+    private static final String USER_IS_NOT_APPROVED_MESSAGE = "Нет аккаунта с таким номером телефона. Проверьте цифры, пожалуйста, или зарегистрируйтесь.";
+    private static final String USER_IS_NOT_APPROVED_ERROR = "DbUserIsNotApproved";
+    private static final String UNSUPPORTED_MEDIA_TYPE_MESSAGE = "Запрашиваемый media-type не поддерживается.";
+    private static final String UNSUPPORTED_MEDIA_TYPE_ERROR = "UnsupportedMediaType";
     final ApiSteps api = new ApiSteps();
 
     public final LoginOtpRequest loginOtpRequest = new LoginOtpRequest("79535006575");

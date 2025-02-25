@@ -23,7 +23,8 @@ import web.pages.MainPage;
 @DisplayName("Авторизация через номер телефона")
 public class AuthorizationPageTests extends TestBase {
 
-    public static final String SEND_SMS = "Мы отправили код на номер";
+    private static final String SEND_SMS = "Мы отправили код на номер";
+    private static final String phoneNumber = "9535006559";
     final MainPage mainPage = new MainPage();
     final LoginPage loginPage = new LoginPage();
 
@@ -32,7 +33,7 @@ public class AuthorizationPageTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     void codeButtonDisabledBeforeTypePhoneTest() {
         mainPage.openMainPage()
-                .closeToolTip();
+                .closeStoreSelectionTooltip();
         loginPage.clickOnLoginButton()
                 .shouldAuthorizationWindowOpen()
                 .shouldCodeButtonDisable();
@@ -43,9 +44,9 @@ public class AuthorizationPageTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     void codeButtonEnabledAfterTypePhoneTest() {
         mainPage.openMainPage()
-                .closeToolTip();
+                .closeStoreSelectionTooltip();
         loginPage.clickOnLoginButton()
-                .setPhoneNumber()
+                .setPhoneNumber(phoneNumber)
                 .shouldCodeButtonEnable();
     }
 
@@ -54,12 +55,12 @@ public class AuthorizationPageTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     void enterCodeWindowOpenTest() {
         mainPage.openMainPage()
-                .closeToolTip();
+                .closeStoreSelectionTooltip();
         loginPage.clickOnLoginButton()
-                .setPhoneNumber()
+                .setPhoneNumber(phoneNumber)
                 .shouldCodeButtonEnable()
                 .clickGetCode()
-                .shouldSendGetCode(SEND_SMS);
+                .shouldDisplaySmsInputWindow(SEND_SMS);
     }
 
 }

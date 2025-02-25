@@ -22,9 +22,9 @@ import web.pages.MainPage;
 @DisplayName("Взаимодействие с каталогом")
 public class InteractionWithProductCatalogTests extends TestBase {
 
-    public static final String CATALOG_NEW_PRODUCTS = "Новинки";
-    public static final String CATALOG_DRINKS = "Напитки";
-    public static final String CATALOG_SKU_DRINKS = "napitki-19314";
+    private static final String CATALOG_NEW_PRODUCTS = "Новинки";
+    private static final String CATALOG_DRINKS = "Напитки";
+    private static final String CATALOG_SKU_DRINKS = "napitki-19314";
     final MainPage mainPage = new MainPage();
     final CatalogPanel catalogPanel = new CatalogPanel();
 
@@ -33,7 +33,7 @@ public class InteractionWithProductCatalogTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     void openCatalogTest() {
         mainPage.openMainPage()
-                .closeToolTip();
+                .closeStoreSelectionTooltip();
         mainPage.openCatalog();
         catalogPanel.openFirstLevelCatalog(CATALOG_NEW_PRODUCTS)
                 .shouldFirstLevelCatalog(CATALOG_NEW_PRODUCTS);
@@ -44,9 +44,9 @@ public class InteractionWithProductCatalogTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     void openCatalogSecondLevelTest() {
         mainPage.openMainPage()
-                .closeToolTip();
+                .closeStoreSelectionTooltip();
         mainPage.openCatalog();
-        catalogPanel.hoverOnCatalog(CATALOG_NEW_PRODUCTS)
+        catalogPanel.shouldFirstLevelCatalogContentDisplayedOnHover(CATALOG_NEW_PRODUCTS)
                 .openSecondLevelCatalog(CATALOG_SKU_DRINKS)
                 .shouldSecondLevelCatalog(CATALOG_DRINKS);
     }

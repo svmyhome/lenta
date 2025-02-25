@@ -31,11 +31,12 @@ import static io.restassured.RestAssured.given;
 @Tag("api")
 @DisplayName("Информация о магазинах")
 public class StoreTests extends TestBase {
-    public static final String STORE_CODE = "0067";
-    public static final String STORE_ADDRESS_LENINA = "ул. Ленина, д. 132";
-    public static final String STORE_CITY = "Альметьевск";
-    public static final int STORE_COUNT = 662;
-    public static final String STORE_ADDRESS_SPB = "Санкт-Петербург, Заневский пр., 71";
+    private static final String STORE_CODE = "0067";
+    private static final String STORE_ADDRESS_LENINA = "ул. Ленина, д. 132";
+    private static final String STORE_CITY = "Альметьевск";
+    private static final int STORE_COUNT = 662;
+    private static final String token = "3849FACA09F05B077ADF56894288E40A1";
+
     final ApiSteps api = new ApiSteps();
 
     @Test
@@ -89,7 +90,7 @@ public class StoreTests extends TestBase {
 
         step("Версия и токен получены", () -> {
             api.assertValues("2.0", response.jsonrpc())
-                    .assertValues("3849FACA09F05B077ADF56894288E40A1", response.result().sessionToken());
+                    .assertValues(token, response.result().sessionToken());
         });
     }
 

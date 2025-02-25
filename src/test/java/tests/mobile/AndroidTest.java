@@ -1,7 +1,6 @@
 package tests.mobile;
 
 import io.qameta.allure.Feature;
-import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -12,11 +11,9 @@ import mobile.screens.android.StoreSelectionScreen;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qameta.allure.Layer;
 import tests.TestBase;
 
-import static tests.api.SkuTests.SKU_MILK;
-import static tests.api.SkuTests.SKU_MILK_ART;
-import static tests.api.StoreTests.STORE_ADDRESS_SPB;
 
 @Layer("android")
 @Feature("Магазины")
@@ -25,6 +22,10 @@ import static tests.api.StoreTests.STORE_ADDRESS_SPB;
 @Tag("android")
 @DisplayName("Информация о магазинах и товарах")
 public class AndroidTest extends TestBase {
+    private static final String SKU_MILK = "молоко";
+    private static final String SKU_MILK_ART = "Арт: 435450";
+    public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
+    private static final String STORE_ADDRESS_SPB = "Санкт-Петербург, Заневский пр., 71";
     final DeviceLocationScreen deviceLocationScreen = new DeviceLocationScreen();
     final StoreSelectionScreen storeSelectionScreen = new StoreSelectionScreen();
     final ProductSelectionScreen catalogScreen = new ProductSelectionScreen();
