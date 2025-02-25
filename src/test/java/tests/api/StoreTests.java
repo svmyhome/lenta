@@ -1,6 +1,6 @@
 package tests.api;
 
-import common.helpers.ApiHelper;
+import api.ApiSteps;
 import io.qameta.allure.Feature;
 import qameta.allure.Layer;
 import io.qameta.allure.Owner;
@@ -37,7 +37,7 @@ public class StoreTests extends TestBase {
     public static final String STORE_ADDRESS_SPB = "Санкт-Петербург, Заневский пр., 71";
     public static final String STORES = "/api/v1/stores/";
     public static final String DELIVERY_MODE_GET = "/jrpc/deliveryModeGet";
-    final ApiHelper api = new ApiHelper();
+    final ApiSteps api = new ApiSteps();
 
     @Test
     @DisplayName("Успешное получение данных о магазине номер " + STORE_CODE)
@@ -52,9 +52,9 @@ public class StoreTests extends TestBase {
 
         step("Код, адрес и город совпадают", () ->
         {
-            api.assertValues(storeResponse.id(), STORE_CODE)
-                    .assertValues(storeResponse.address(), STORE_ADDRESS_LENINA)
-                    .assertValues(storeResponse.cityName(), (STORE_CITY));
+            api.assertValues(STORE_CODE, storeResponse.id())
+                    .assertValues(STORE_ADDRESS_LENINA, storeResponse.address())
+                    .assertValues((STORE_CITY), storeResponse.cityName());
         });
     }
 
@@ -89,8 +89,8 @@ public class StoreTests extends TestBase {
                         .extract().as(DeliveryModeResponse.class));
 
         step("Версия и токен получены", () -> {
-            api.assertValues(response.jsonrpc(), "2.0")
-                    .assertValues(response.result().sessionToken(), "3849FACA09F05B077ADF56894288E40A1");
+            api.assertValues("2.0", response.jsonrpc())
+                    .assertValues("3849FACA09F05B077ADF56894288E40A1", response.result().sessionToken());
         });
     }
 

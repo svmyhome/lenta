@@ -1,27 +1,27 @@
 package tests.api;
 
-import common.helpers.ApiHelper;
+import api.models.login.LoginOtpRequest;
+import api.models.login.UnsupportedMediaTypeResponse;
+import api.models.login.UserIsNotApprovedResponse;
+import api.ApiSteps;
 import io.qameta.allure.Feature;
-import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import lombok.extern.slf4j.Slf4j;
-import api.models.login.LoginOtpRequest;
-import api.models.login.UnsupportedMediaTypeResponse;
-import api.models.login.UserIsNotApprovedResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qameta.allure.Layer;
 import tests.TestBase;
 
-import static io.qameta.allure.Allure.step;
-import static io.restassured.RestAssured.given;
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode403ResponseSpecification;
 import static api.specifications.ApiSpecifications.statusCode415RequestSpecification;
 import static api.specifications.ApiSpecifications.statusCode415ResponseSpecification;
+import static io.qameta.allure.Allure.step;
+import static io.restassured.RestAssured.given;
 
 
 @Layer("rest")
@@ -37,7 +37,7 @@ public class LoginTests extends TestBase {
     public static final String UNSUPPORTED_MEDIA_TYPE_MESSAGE = "Запрашиваемый media-type не поддерживается.";
     public static final String UNSUPPORTED_MEDIA_TYPE_ERROR = "UnsupportedMediaType";
     public static final String LOGINOTP = "/api/v1/authentication/loginotp";
-    final ApiHelper api = new ApiHelper();
+    final ApiSteps api = new ApiSteps();
 
     public final LoginOtpRequest loginOtpRequest = new LoginOtpRequest("79535006575");
 
@@ -55,8 +55,8 @@ public class LoginTests extends TestBase {
 
         step("Нет аккаунта с таким номером телефона", () ->
         {
-            api.assertValues(unsupportedMediaTypeResponse.message(), UNSUPPORTED_MEDIA_TYPE_MESSAGE)
-                    .assertValues(unsupportedMediaTypeResponse.errorCode(), UNSUPPORTED_MEDIA_TYPE_ERROR);
+            api.assertValues(UNSUPPORTED_MEDIA_TYPE_MESSAGE, unsupportedMediaTypeResponse.message())
+                    .assertValues(UNSUPPORTED_MEDIA_TYPE_ERROR, unsupportedMediaTypeResponse.errorCode());
         });
     }
 
@@ -73,8 +73,8 @@ public class LoginTests extends TestBase {
 
         step("Нет аккаунта с таким номером телефона", () ->
         {
-            api.assertValues(userIsNotApprovedResponse.message(), USER_IS_NOT_APPROVED_MESSAGE)
-                    .assertValues(userIsNotApprovedResponse.errorCode(), USER_IS_NOT_APPROVED_ERROR);
+            api.assertValues(USER_IS_NOT_APPROVED_MESSAGE, userIsNotApprovedResponse.message())
+                    .assertValues(USER_IS_NOT_APPROVED_ERROR, userIsNotApprovedResponse.errorCode());
         });
     }
 

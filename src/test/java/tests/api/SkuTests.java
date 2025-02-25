@@ -1,6 +1,6 @@
 package tests.api;
 
-import common.helpers.ApiHelper;
+import api.ApiSteps;
 import io.qameta.allure.Feature;
 import qameta.allure.Layer;
 import io.qameta.allure.Owner;
@@ -38,7 +38,7 @@ public class SkuTests extends TestBase {
     public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
     public static final String SKUS_NAME = "/api/v1/skus/%s/name";
     public static final String CATALOG_SEARCH = "/api/v1/stores/0012/catalog/search/?value=";
-    final ApiHelper api = new ApiHelper();
+    final ApiSteps api = new ApiSteps();
 
     @Test
     @DisplayName("Успешное получение данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA)
@@ -53,8 +53,8 @@ public class SkuTests extends TestBase {
 
         step("SKU и название товара совпадают", () ->
         {
-            api.assertValues(skuResponse.code(), SKU_VODKA_ARKHANGELSKAYA)
-                    .assertValues(skuResponse.name(), NAME_VODKA_ARKHANGELSKAYA);
+            api.assertValues(SKU_VODKA_ARKHANGELSKAYA, skuResponse.code())
+                    .assertValues(NAME_VODKA_ARKHANGELSKAYA, skuResponse.name());
         });
     }
 
