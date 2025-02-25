@@ -1,9 +1,10 @@
 package tests.api;
 
+import api.ApiEnpoints;
+import api.ApiSteps;
 import api.models.login.LoginOtpRequest;
 import api.models.login.UnsupportedMediaTypeResponse;
 import api.models.login.UserIsNotApprovedResponse;
-import api.ApiSteps;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -36,7 +37,6 @@ public class LoginTests extends TestBase {
     public static final String USER_IS_NOT_APPROVED_ERROR = "DbUserIsNotApproved";
     public static final String UNSUPPORTED_MEDIA_TYPE_MESSAGE = "Запрашиваемый media-type не поддерживается.";
     public static final String UNSUPPORTED_MEDIA_TYPE_ERROR = "UnsupportedMediaType";
-    public static final String LOGINOTP = "/api/v1/authentication/loginotp";
     final ApiSteps api = new ApiSteps();
 
     public final LoginOtpRequest loginOtpRequest = new LoginOtpRequest("79535006575");
@@ -48,7 +48,7 @@ public class LoginTests extends TestBase {
         UnsupportedMediaTypeResponse unsupportedMediaTypeResponse = step("Получен код 415", () ->
                 given(statusCode415RequestSpecification)
                         .when().body(loginOtpRequest)
-                        .post(LOGINOTP)
+                        .post(ApiEnpoints.LOGINOTP)
                         .then()
                         .spec(statusCode415ResponseSpecification)
                         .extract().as(UnsupportedMediaTypeResponse.class));
@@ -67,7 +67,7 @@ public class LoginTests extends TestBase {
         UserIsNotApprovedResponse userIsNotApprovedResponse = step("Получен код 403", () ->
                 given(requestSpecification)
                         .when().body(loginOtpRequest)
-                        .post(LOGINOTP)
+                        .post(ApiEnpoints.LOGINOTP)
                         .then()
                         .spec(statusCode403ResponseSpecification).extract().as(UserIsNotApprovedResponse.class));
 

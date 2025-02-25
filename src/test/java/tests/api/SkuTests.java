@@ -1,25 +1,26 @@
 package tests.api;
 
+import api.ApiEnpoints;
 import api.ApiSteps;
+import api.models.sku.CatalogSearchRequest;
+import api.models.sku.SkuResponse;
 import io.qameta.allure.Feature;
-import qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
-import api.models.sku.CatalogSearchRequest;
-import api.models.sku.SkuResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qameta.allure.Layer;
 import tests.TestBase;
 
-import static io.qameta.allure.Allure.step;
-import static io.restassured.RestAssured.given;
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
+import static io.qameta.allure.Allure.step;
+import static io.restassured.RestAssured.given;
 
 @Layer("rest")
 @Slf4j
@@ -36,8 +37,6 @@ public class SkuTests extends TestBase {
     public static final String SKU_MILK = "молоко";
     public static final String SKU_MILK_ART = "Арт: 435450";
     public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
-    public static final String SKUS_NAME = "/api/v1/skus/%s/name";
-    public static final String CATALOG_SEARCH = "/api/v1/stores/0012/catalog/search/?value=";
     final ApiSteps api = new ApiSteps();
 
     @Test
@@ -46,7 +45,7 @@ public class SkuTests extends TestBase {
     public void getSkuTest() {
         SkuResponse skuResponse = step("Успешный запрос данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA, () ->
                 given(requestSpecification)
-                        .get(String.format(SKUS_NAME, SKU_VODKA_ARKHANGELSKAYA))
+                        .get(String.format(ApiEnpoints.SKUS_NAME, SKU_VODKA_ARKHANGELSKAYA))
                         .then()
                         .spec(statusCode200ResponseSpecification)
                         .extract().as(SkuResponse.class));
@@ -66,7 +65,7 @@ public class SkuTests extends TestBase {
         Response response = step("Успешный запрос данных о товаре", () ->
                 given(requestSpecification)
                         .when().body(catalogSearchRequest)
-                        .get(CATALOG_SEARCH + SKU_BREAD)
+                        .get(ApiEnpoints.CATALOG_SEARCH + SKU_BREAD)
                         .then()
                         .spec(statusCode200ResponseSpecification)
                         .extract().response());
