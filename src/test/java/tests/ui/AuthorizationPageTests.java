@@ -9,13 +9,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import qameta.allure.Microservice;
 import tests.TestBase;
 import web.pages.LoginPage;
 import web.pages.MainPage;
 
 @Layer("web")
-@Microservice("checkout")
 @Feature("Авторизация")
 @Story("Пользователь может авторизоваться через кнопку 'Войти'")
 @Owner("Ivanov")
