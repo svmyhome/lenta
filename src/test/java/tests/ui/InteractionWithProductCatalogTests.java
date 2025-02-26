@@ -9,7 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import tests.TestBase;
 import web.pages.CatalogPanel;
 import web.pages.MainPage;
 
@@ -20,7 +19,7 @@ import web.pages.MainPage;
 @Tag("catalog")
 @Tag("ui")
 @DisplayName("Взаимодействие с каталогом")
-public class InteractionWithProductCatalogTests extends TestBase {
+public class InteractionWithProductCatalogTests extends TestBaseWeb {
 
     private static final String CATALOG_NEW_PRODUCTS = "Новинки";
     private static final String CATALOG_DRINKS = "Напитки";

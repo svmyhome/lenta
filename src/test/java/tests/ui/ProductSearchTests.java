@@ -9,7 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import tests.TestBase;
 import web.pages.MainPage;
 import web.pages.SearchPage;
 
@@ -19,7 +18,7 @@ import web.pages.SearchPage;
 @Owner("Ivanov")
 @Tag("ui")
 @DisplayName("Поиск товара")
-public class ProductSearchTests extends TestBase {
+public class ProductSearchTests extends TestBaseWeb {
 
     private static final String MILK = "молоко";
     final MainPage mainPage = new MainPage();

@@ -9,7 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import tests.TestBase;
 import web.pages.LoginPage;
 import web.pages.MainPage;
 
@@ -19,7 +18,7 @@ import web.pages.MainPage;
 @Owner("Ivanov")
 @Tag("ui")
 @DisplayName("Авторизация через номер телефона")
-public class AuthorizationPageTests extends TestBase {
+public class AuthorizationPageTests extends TestBaseWeb {
 
     private static final String SEND_SMS = "Мы отправили код на номер";
     private static final String phoneNumber = "9535006559";

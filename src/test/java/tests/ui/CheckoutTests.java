@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
 import qameta.allure.Microservice;
-import tests.TestBase;
 import web.pages.MainPage;
 import web.pages.SearchPage;
 
@@ -22,7 +21,7 @@ import web.pages.SearchPage;
 @Owner("Ivanov")
 @Tag("ui")
 @DisplayName("Добавление товара в корзину")
-public class CheckoutTests extends TestBase {
+public class CheckoutTests extends TestBaseWeb {
 
     private static final String KEFIR = "кефир";
     final MainPage mainPage = new MainPage();
