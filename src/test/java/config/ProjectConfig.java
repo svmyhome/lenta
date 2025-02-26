@@ -6,6 +6,8 @@ import org.aeonbits.owner.Config;
         "classpath:config/project.properties"
 })
 public interface ProjectConfig extends Config {
+    @Key("android.localUrl")
+    String getLocalUrl();
 
     @Key("browserStack.project")
     String getProjectName();

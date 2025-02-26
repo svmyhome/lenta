@@ -4,10 +4,12 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static common.ProjectSettings.ProjectConfiguration.projectConfig;
+
 public class LocalHelper {
     public static URL getLocalUrl() {
         try {
-            return new URL("http://192.168.31.143:4723");
+            return new URL(projectConfig.getLocalUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

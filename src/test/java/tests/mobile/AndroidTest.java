@@ -35,7 +35,7 @@ public class AndroidTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSelectStoreFromSearchInputTest() throws InterruptedException {
         deviceLocationScreen.clickPermissionAllowedButton();
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
@@ -47,7 +47,7 @@ public class AndroidTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSelectSkuFromSearchInputTest() throws InterruptedException {
         deviceLocationScreen.clickPermissionAllowedButton();
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
@@ -65,7 +65,7 @@ public class AndroidTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSkuSelectionFromSearchInputTest() throws InterruptedException {
         deviceLocationScreen.clickPermissionAllowedButton();
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
 
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
