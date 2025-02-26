@@ -15,7 +15,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import tests.TestBase;
 
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode403ResponseSpecification;
@@ -32,7 +31,7 @@ import static io.restassured.RestAssured.given;
 @Owner("Sarychev")
 @Tag("api")
 @DisplayName("Ошибки авторизации")
-public class LoginTests extends TestBase {
+public class LoginTests extends TestBaseApi {
     private static final String USER_IS_NOT_APPROVED_MESSAGE = "Нет аккаунта с таким номером телефона. Проверьте цифры, пожалуйста, или зарегистрируйтесь.";
     private static final String USER_IS_NOT_APPROVED_ERROR = "DbUserIsNotApproved";
     private static final String UNSUPPORTED_MEDIA_TYPE_MESSAGE = "Запрашиваемый media-type не поддерживается.";

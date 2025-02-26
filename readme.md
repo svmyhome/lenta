@@ -98,28 +98,29 @@ https://jenkins.autotests.cloud/job/QaLentaMobile
 #### Локально Web
 ```
 gradle clean ui -DenvironmentType=local
-gradle clean ui -Dplatform=web
-gradle clean ui -DenvironmentType=local -Dplatform=web
+gradle clean ui -DenvironmentType=local -Dplatform=web-- deprecated
 ```
 #### Удаленно Web
 ```
 gradle clean ui -DenvironmentType=remote
-gradle clean ui -DenvironmentType=remote -Dplatform=web
+gradle clean ui -DenvironmentType=remote -Dplatform=web -- deprecated
 ```
 #### Запуск API локально
 ```
-gradle clean api -DenvironmentType=local -Dplatform=web
-gradle clean api -DenvironmentType=local -Dplatform=remote
+gradle clean api -DenvironmentType=local
+gradle clean api -DenvironmentType=remote
 ```
 #### Реальная Мобилка
 ```
-gradle clean android -DdeviceHost=real -DmobileOS=android
-gradle clean android -Dplatform=mobile -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
+gradle clean android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
+gradle clean android -DdeviceHost=real -DmobileOS=android -- deprecated
+gradle clean android -Dplatform=mobile -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A -- deprecated
 ```
 
 #### Эмулятор Мобилка
 ```
-gradle clean android -Dplatform=mobile -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
+gradle clean android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
+gradle clean android -Dplatform=mobile -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4 -- deprecated
 ```
 #### BrowserStack Мобилка
 ```

@@ -6,9 +6,9 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class ProjectSettings {
 
-    public static final String platform = System.getProperty("platform", "mobile");
-    public static final boolean isWeb = platform.equals("web");
-    public static final boolean isMobile = platform.equals("mobile");
+//    public static final String platform = System.getProperty("platform", "mobile");
+//    public static final boolean isWeb = platform.equals("web");
+//    public static final boolean isMobile = platform.equals("mobile");
 
     public static final String environmentType = System.getProperty("environmentType", "local");
     public static final boolean isRemoteStartWeb = environmentType.equals("remote");

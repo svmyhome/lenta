@@ -16,7 +16,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import tests.TestBase;
 
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
@@ -30,7 +29,7 @@ import static io.restassured.RestAssured.given;
 @Owner("Sarychev")
 @Tag("api")
 @DisplayName("Информация о магазинах")
-public class StoreTests extends TestBase {
+public class StoreTests extends TestBaseApi {
     private static final String STORE_CODE = "0067";
     private static final String STORE_ADDRESS_LENINA = "ул. Ленина, д. 132";
     private static final String STORE_CITY = "Альметьевск";

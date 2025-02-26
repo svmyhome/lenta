@@ -12,7 +12,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import tests.TestBase;
 
 
 @Layer("android")
@@ -21,7 +20,7 @@ import tests.TestBase;
 @Owner("Petrov")
 @Tag("android")
 @DisplayName("Информация о магазинах и товарах")
-public class AndroidTest extends TestBase {
+public class AndroidTest extends TestBaseMobile {
     private static final String SKU_MILK = "молоко";
     private static final String SKU_MILK_ART = "Арт: 435450";
     public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
@@ -35,7 +34,7 @@ public class AndroidTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSelectStoreFromSearchInputTest() throws InterruptedException {
         deviceLocationScreen.clickPermissionAllowedButton();
-//        Thread.sleep(5000);
+        Thread.sleep(5000);
 
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
@@ -47,7 +46,7 @@ public class AndroidTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSelectSkuFromSearchInputTest() throws InterruptedException {
         deviceLocationScreen.clickPermissionAllowedButton();
-//        Thread.sleep(5000);
+        Thread.sleep(5000);
 
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
@@ -65,7 +64,7 @@ public class AndroidTest extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     public void successfulSkuSelectionFromSearchInputTest() throws InterruptedException {
         deviceLocationScreen.clickPermissionAllowedButton();
-//        Thread.sleep(5000);
+        Thread.sleep(5000);
 
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()

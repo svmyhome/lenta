@@ -15,7 +15,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qameta.allure.Layer;
-import tests.TestBase;
 
 import static api.specifications.ApiSpecifications.requestSpecification;
 import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
@@ -29,7 +28,7 @@ import static io.restassured.RestAssured.given;
 @Owner("Sarychev")
 @Tag("api")
 @DisplayName("Информация о товарах")
-public class SkuTests extends TestBase {
+public class SkuTests extends TestBaseApi {
     private static final String SKU_VODKA_ARKHANGELSKAYA = "354331";
     private static final String NAME_VODKA_ARKHANGELSKAYA = "Водка АРХАНГЕЛЬСКАЯ Северная выдержка 40%, 0.5л";
     private static final String SKU_BREAD = "хлеб";
