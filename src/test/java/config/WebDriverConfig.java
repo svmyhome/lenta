@@ -8,6 +8,9 @@ import org.aeonbits.owner.Config;
 })
 public interface WebDriverConfig extends Config {
 
+    @Key("isRemoteStartWeb")
+    boolean isRemoteStartWeb();
+
     @Key("remote.url")
     String getRemoteUrl();
 

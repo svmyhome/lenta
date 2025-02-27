@@ -3,9 +3,9 @@ package common.helpers;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static common.Credentials.BROWSERSTACK_PASSWORD;
+import static common.Credentials.BROWSERSTACK_USER;
 import static common.CustomAllureListener.withCustomTemplates;
-import static common.ProjectSettings.Credentials.BROWSERSTACK_PASSWORD;
-import static common.ProjectSettings.Credentials.BROWSERSTACK_USER;
 import static io.restassured.RestAssured.given;
 
 public class BrowserstackHelper {

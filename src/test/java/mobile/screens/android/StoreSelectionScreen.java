@@ -6,7 +6,7 @@ import io.qameta.allure.Step;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.clickable;
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
@@ -19,7 +19,7 @@ public class StoreSelectionScreen {
 
     @Step("Кликнуть на поле Выведите адрес")
     public StoreSelectionScreen clickEnterAddress() {
-        enterAddress.shouldBe(clickable, Duration.ofSeconds(10));
+        enterAddress.shouldBe(enabled, Duration.ofSeconds(10));
         enterAddress.click();
         return this;
     }

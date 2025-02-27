@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 
-import static common.ProjectSettings.isRemoteStartWeb;
+import static drivers.CreateWebDriver.isRemoteStartWeb;
 import static drivers.CreateWebDriver.webDriverConfig;
 
 public class TestBaseWeb {
@@ -29,7 +29,7 @@ public class TestBaseWeb {
         Attach.screenshotAs("Финальный скриншот");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        if (isRemoteStartWeb) {
+        if (isRemoteStartWeb()) {
             Attach.addVideo();
         }
         Selenide.closeWebDriver();

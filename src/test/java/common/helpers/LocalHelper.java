@@ -4,7 +4,8 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static common.ProjectSettings.ProjectConfiguration.projectConfig;
+import static common.ProjectConfiguration.projectConfig;
+
 
 public class LocalHelper {
     public static URL getLocalUrl() {

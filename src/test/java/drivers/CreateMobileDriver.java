@@ -11,13 +11,13 @@ import org.openqa.selenium.WebDriver;
 import javax.annotation.Nonnull;
 import java.time.LocalDateTime;
 
+import static common.EnvironmentSettings.isAndroid;
+import static common.EnvironmentSettings.isBrowserStackDevice;
+import static common.ProjectConfiguration.projectConfig;
 import static common.helpers.BrowserstackHelper.getBrowserstackUrl;
 import static common.helpers.LocalHelper.getAppPath;
 import static common.helpers.LocalHelper.getLocalUrl;
 import static common.helpers.LocalHelper.setLocation;
-import static common.ProjectSettings.ProjectConfiguration.projectConfig;
-import static common.ProjectSettings.isAndroid;
-import static common.ProjectSettings.isBrowserStackDevice;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 

@@ -6,6 +6,10 @@ import org.aeonbits.owner.Config;
         "classpath:config/project.properties"
 })
 public interface ProjectConfig extends Config {
+
+    @Key("isBrowserStackDevice")
+    boolean isBrowserStackDevice();
+
     @Key("android.localUrl")
     String getLocalUrl();
 

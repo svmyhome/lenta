@@ -12,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 
 import static com.codeborne.selenide.Selenide.open;
-import static common.ProjectSettings.isBrowserStackDevice;
+import static common.EnvironmentSettings.isBrowserStackDevice;
 
 public class TestBaseMobile {
 
