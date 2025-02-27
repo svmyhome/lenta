@@ -112,14 +112,16 @@ gradle clean api -DenvironmentType=remote
 ```
 #### Реальная Мобилка
 ```
-gradle clean android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A
+gradle clean android -DdeviceHost=real -Ddevice=redmi9A
+gradle clean android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A -- deprecated
 gradle clean android -DdeviceHost=real -DmobileOS=android -- deprecated
 gradle clean android -Dplatform=mobile -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A -- deprecated
 ```
 
 #### Эмулятор Мобилка
 ```
-gradle clean android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4
+gradle clean android -DdeviceHost=emulation -Ddevice=pixel4
+gradle clean android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4 -- deprecated
 gradle clean android -Dplatform=mobile -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4 -- deprecated
 ```
 #### BrowserStack Мобилка

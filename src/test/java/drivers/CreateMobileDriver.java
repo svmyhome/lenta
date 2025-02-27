@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import javax.annotation.Nonnull;
 import java.time.LocalDateTime;
 
-import static common.EnvironmentSettings.isAndroid;
 import static common.EnvironmentSettings.isBrowserStackDevice;
 import static common.ProjectConfiguration.projectConfig;
 import static common.helpers.BrowserstackHelper.getBrowserstackUrl;
@@ -28,7 +27,8 @@ public class CreateMobileDriver implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-        if (isAndroid) {
+        androidConfig = ConfigFactory.create(DeviceAndroidConfig.class, System.getProperties());
+        if (androidConfig.isAndroid()) {
             return createAndroidDriver();
         } else {
             throw new UnsupportedOperationException("Unsupported platform: neither Android");
@@ -36,7 +36,7 @@ public class CreateMobileDriver implements WebDriverProvider {
     }
 
     public AndroidDriver createAndroidDriver() {
-        androidConfig = ConfigFactory.create(DeviceAndroidConfig.class, System.getProperties());
+
         androidOptions = new UiAutomator2Options();
         androidOptions.setCapability("disableIdLocatorAutocompletion", true);
         androidOptions.setDeviceName(androidConfig.getDeviceName());
