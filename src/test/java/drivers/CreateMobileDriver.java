@@ -2,6 +2,7 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import config.DeviceAndroidConfig;
+import config.MobileConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
@@ -11,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import javax.annotation.Nonnull;
 import java.time.LocalDateTime;
 
-import static common.MobileConfiguration.projectConfig;
 import static common.helpers.BrowserstackHelper.getBrowserstackUrl;
 import static common.helpers.LocalHelper.getAppPath;
 import static common.helpers.LocalHelper.getLocalUrl;
@@ -21,12 +21,14 @@ import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 
 public class CreateMobileDriver implements WebDriverProvider {
     DeviceAndroidConfig androidConfig;
+    MobileConfig mobileConfig;
     UiAutomator2Options androidOptions;
     private static boolean isBrowserStackDevice;
 
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
+        mobileConfig = ConfigFactory.create(MobileConfig.class, System.getProperties());
         androidConfig = ConfigFactory.create(DeviceAndroidConfig.class, System.getProperties());
         if (androidConfig.isAndroid()) {
             return createAndroidDriver();
@@ -37,15 +39,15 @@ public class CreateMobileDriver implements WebDriverProvider {
 
     public AndroidDriver createAndroidDriver() {
         androidOptions = new UiAutomator2Options();
-        isBrowserStackDevice = androidConfig.isBrowserStackDevice();
+        isBrowserStackDevice = mobileConfig.isBrowserStackDevice();
         androidOptions.setCapability("disableIdLocatorAutocompletion", true);
         androidOptions.setDeviceName(androidConfig.getDeviceName());
         androidOptions.setPlatformVersion(androidConfig.getPlatformVersion());
         if (isBrowserStackDevice) {
             androidOptions.setApp(androidConfig.getApp());
-            androidOptions.setCapability("project", projectConfig.getProjectName());
-            androidOptions.setCapability("build", projectConfig.getBuildName() + " " + LocalDateTime.now());
-            androidOptions.setCapability("name", projectConfig.getTestName() + " " + androidConfig.getDeviceName());
+            androidOptions.setCapability("project", mobileConfig.getProjectName());
+            androidOptions.setCapability("build", mobileConfig.getBuildName() + " " + LocalDateTime.now());
+            androidOptions.setCapability("name", mobileConfig.getTestName() + " " + androidConfig.getDeviceName());
             androidOptions.setCapability("interactiveDebugging", true);
             androidOptions.setCapability("browserstack.debug", true);
             androidOptions.setCapability("geoLocation", "RU");
@@ -67,5 +69,6 @@ public class CreateMobileDriver implements WebDriverProvider {
     public static boolean isBrowserStackDevice() {
         return isBrowserStackDevice;
     }
+
 
 }

@@ -13,14 +13,8 @@ public interface DeviceAndroidConfig extends Config {
     @Key("isAndroid")
     boolean isAndroid();
 
-    @Key("isBrowserStackDevice")
-    boolean isBrowserStackDevice();
-
     @Key("android.app")
     String getApp();
-
-    @Key("android.localUrl")
-    String getLocalUrl();
 
     @Key("android.deviceName")
     String getDeviceName();

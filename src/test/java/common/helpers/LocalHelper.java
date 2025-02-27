@@ -4,18 +4,17 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static common.MobileConfiguration.projectConfig;
+import static config.MobileConfiguration.mobileConfig;
 
 
 public class LocalHelper {
     public static URL getLocalUrl() {
         try {
-            return new URL(projectConfig.getLocalUrl());
+            return new URL(mobileConfig.getLocalUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
     }
-
 
     public static String getAppPath() {
         String appVersion = "LentaApp.apk";
