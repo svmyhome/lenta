@@ -3,9 +3,10 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:config/project.properties"
+        "classpath:config/${environmentType}.properties",
+        "classpath:config/local/mobileLocal.properties"
 })
-public interface ProjectConfig extends Config {
+public interface MobileConfig extends Config {
 
     @Key("android.localUrl")
     String getLocalUrl();
@@ -18,4 +19,8 @@ public interface ProjectConfig extends Config {
 
     @Key("browserStack.testName")
     String getTestName();
+
+    @Key("isBrowserStackDevice")
+    boolean isBrowserStackDevice();
+
 }
