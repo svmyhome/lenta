@@ -3,7 +3,8 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:config/${environmentType}.properties",
+        "classpath:config/browserstack/${environmentType}.properties",
+        "classpath:config/emulation/${environmentType}.properties",
         "classpath:config/local/mobileLocal.properties"
 })
 public interface MobileConfig extends Config {

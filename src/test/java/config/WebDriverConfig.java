@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:config/web/${environmentType}.properties",
-        "classpath:config/web/local.properties"
+        "classpath:config/web/webLocal.properties"
 })
 public interface WebDriverConfig extends Config {
 

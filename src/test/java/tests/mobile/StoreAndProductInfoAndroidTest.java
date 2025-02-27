@@ -20,7 +20,7 @@ import qameta.allure.Layer;
 @Owner("Petrov")
 @Tag("android")
 @DisplayName("Информация о магазинах и товарах")
-public class AndroidTest extends TestBaseMobile {
+public class StoreAndProductInfoAndroidTest extends TestBaseMobile {
     private static final String SKU_MILK = "молоко";
     private static final String SKU_MILK_ART = "Арт: 435450";
     public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";

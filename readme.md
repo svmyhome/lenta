@@ -97,39 +97,28 @@ https://jenkins.autotests.cloud/job/QaLentaMobile
 ### Как запускать
 #### Локально Web
 ```
-gradle clean ui -DenvironmentType=local
-gradle clean ui -DenvironmentType=local -Dplatform=web-- deprecated
+gradle clean ui -DenvironmentType=webLocal
 ```
 #### Удаленно Web
 ```
-gradle clean ui -DenvironmentType=remote
-gradle clean ui -DenvironmentType=remote -Dplatform=web -- deprecated
+gradle clean ui -DenvironmentType=webRemote
 ```
 #### Запуск API локально
 ```
-gradle clean api -DenvironmentType=local
-gradle clean api -DenvironmentType=remote
+gradle clean api -DenvironmentType=webLocal
+gradle clean api -DenvironmentType=webRemote
 ```
 #### Реальная Мобилка
 ```
 gradle clean android -Ddevice=redmi9A -DenvironmentType=mobileLocal
-gradle clean android -DdeviceHost=real -Ddevice=redmi9A -- deprecated
-gradle clean android -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A -- deprecated
-gradle clean android -DdeviceHost=real -DmobileOS=android -- deprecated
-gradle clean android -Dplatform=mobile -DdeviceHost=real -DmobileOS=android -Ddevice=redmi9A -- deprecated
 ```
-
 #### Эмулятор Мобилка
 ```
 gradle clean android -Ddevice=pixel4 -DenvironmentType=mobileEmulator
-gradle clean android -DdeviceHost=emulation -Ddevice=pixel4 -- deprecated
-gradle clean android -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4 -- deprecated
-gradle clean android -Dplatform=mobile -DdeviceHost=emulation -DmobileOS=android -Ddevice=pixel4 -- deprecated
 ```
 #### BrowserStack Мобилка
 ```
 gradle clean android -Ddevice=pixel6Pro -DenvironmentType=browserStack
-gradle clean android -Dplatform=mobile -DdeviceHost=browserstack -DmobileOS=android -Ddevice=pixel6Pro  -- deprecated
 ```
 
 <a id="report"></a>
