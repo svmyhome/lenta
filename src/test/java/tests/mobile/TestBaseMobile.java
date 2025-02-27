@@ -12,7 +12,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 
 import static com.codeborne.selenide.Selenide.open;
-import static common.EnvironmentSettings.isBrowserStackDevice;
 
 public class TestBaseMobile {
 
@@ -33,7 +32,7 @@ public class TestBaseMobile {
     public void afterEach(TestInfo testInfo) {
         Attach.screenshotAs("Финальный скриншот");
         Attach.pageSource();
-        if (isBrowserStackDevice) {
+        if (CreateMobileDriver.isBrowserStackDevice()) {
             Selenide.closeWebDriver();
             Attach.addVideoSelenoid(Selenide.sessionId().toString());
         } else {

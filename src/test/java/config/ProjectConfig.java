@@ -7,9 +7,6 @@ import org.aeonbits.owner.Config;
 })
 public interface ProjectConfig extends Config {
 
-    @Key("isBrowserStackDevice")
-    boolean isBrowserStackDevice();
-
     @Key("android.localUrl")
     String getLocalUrl();
 
