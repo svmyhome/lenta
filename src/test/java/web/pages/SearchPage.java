@@ -7,6 +7,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.switchTo;
 
 public class SearchPage {
 
@@ -38,4 +39,20 @@ public class SearchPage {
         goodsCartQuantity.shouldHave(text(quantity));
         return this;
     }
+
+    @Step("Переключится на новый фрейм")
+    public SearchPage switchToNewFrame(String value) {
+        switchTo().frame(value);
+        return this;
+    }
+
+    @Step("Переключится на основной фрейм")
+    public SearchPage switchToMainFrame() {
+        switchTo().defaultContent();
+        return this;
+    }
+
+
+
+
 }

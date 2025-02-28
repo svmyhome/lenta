@@ -14,6 +14,9 @@ public interface WebDriverConfig extends Config {
     @Key("remote.url")
     String getRemoteUrl();
 
+    @Key("remote.videoUrl")
+    String getRemoteVideoUrl();
+
     @Key("webdriver.baseUrl")
     String getBaseUrl();
 

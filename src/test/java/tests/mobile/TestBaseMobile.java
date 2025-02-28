@@ -9,7 +9,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.TestInfo;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -29,12 +28,12 @@ public class TestBaseMobile {
     }
 
     @AfterEach
-    public void afterEach(TestInfo testInfo) {
+    public void afterEach() {
         Attach.screenshotAs("Финальный скриншот");
         Attach.pageSource();
         if (CreateMobileDriver.isBrowserStackDevice()) {
             Selenide.closeWebDriver();
-            Attach.addVideoSelenoid(Selenide.sessionId().toString());
+            Attach.addVideoBrowserStack(Selenide.sessionId().toString());
         } else {
             Selenide.closeWebDriver();
         }

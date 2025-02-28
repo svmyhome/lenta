@@ -1,6 +1,5 @@
 package tests.ui;
 
-import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -24,6 +23,7 @@ import web.pages.SearchPage;
 public class CheckoutTests extends TestBaseWeb {
 
     private static final String KEFIR = "кефир";
+    private static final String NEW_FRAME = "fl-738251";
     final MainPage mainPage = new MainPage();
     final SearchPage searchPage = new SearchPage();
 
@@ -35,11 +35,9 @@ public class CheckoutTests extends TestBaseWeb {
                 .closeStoreSelectionTooltip();
         mainPage.openSearch()
                 .fillItemSearchEnter(KEFIR);
-        Selenide.switchTo().frame("fl-738251");
-
-        searchPage.clickCloseDiscountPopup();
-        Selenide.switchTo().defaultContent();
+        searchPage.switchToNewFrame(NEW_FRAME)
+                .clickCloseDiscountPopup()
+                .switchToMainFrame();
         searchPage.addItemToCart(KEFIR).shouldItemFoundViaSearchBar1(KEFIR, "1");
-        System.out.println();
     }
 }

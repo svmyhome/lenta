@@ -8,8 +8,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-import static common.Credentials.SELENOID_PASSWORD;
-import static common.Credentials.SELENOID_USER;
+import static config.AuthConfiguration.SELENOID_PASSWORD;
+import static config.AuthConfiguration.SELENOID_USER;
 
 public class CreateWebDriver {
     private static boolean isRemoteStartWeb;

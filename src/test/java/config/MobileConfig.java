@@ -12,6 +12,12 @@ public interface MobileConfig extends Config {
     @Key("android.localUrl")
     String getLocalUrl();
 
+    @Key("browserStack.url")
+    String getBrowserStackUrl();
+
+    @Key("browserStack.api")
+    String getBrowserStackApi();
+
     @Key("browserStack.project")
     String getProjectName();
 

@@ -54,7 +54,7 @@ public class StoreAndProductInfoAndroidTest extends TestBaseMobile {
                 .clickViewGoods();
 
         catalogScreen.clickFindProducts()
-                .enterProductInSearch("молоко")
+                .enterProductInSearch(SKU_MILK)
                 .clickToProduct()
                 .shouldGoodsFind(1);
     }

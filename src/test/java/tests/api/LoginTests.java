@@ -47,7 +47,7 @@ public class LoginTests extends TestBaseApi {
         UnsupportedMediaTypeResponse unsupportedMediaTypeResponse = step("Получен код 415", () ->
                 given(statusCode415RequestSpecification)
                         .when().body(loginOtpRequest)
-                        .post(ApiEnpoints.LOGINOTP)
+                        .post(ApiEnpoints.LOGIN_OTP)
                         .then()
                         .spec(statusCode415ResponseSpecification)
                         .extract().as(UnsupportedMediaTypeResponse.class));
@@ -66,7 +66,7 @@ public class LoginTests extends TestBaseApi {
         UserIsNotApprovedResponse userIsNotApprovedResponse = step("Получен код 403", () ->
                 given(requestSpecification)
                         .when().body(loginOtpRequest)
-                        .post(ApiEnpoints.LOGINOTP)
+                        .post(ApiEnpoints.LOGIN_OTP)
                         .then()
                         .spec(statusCode403ResponseSpecification).extract().as(UserIsNotApprovedResponse.class));
 
