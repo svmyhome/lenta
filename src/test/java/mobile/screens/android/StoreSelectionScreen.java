@@ -1,5 +1,6 @@
 package mobile.screens.android;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Step;
@@ -19,6 +20,7 @@ public class StoreSelectionScreen {
 
     @Step("Кликнуть на поле Выведите адрес")
     public StoreSelectionScreen clickEnterAddress() {
+        Selenide.sleep(5000);
         enterAddress.shouldBe(enabled, Duration.ofSeconds(10));
         enterAddress.click();
         return this;

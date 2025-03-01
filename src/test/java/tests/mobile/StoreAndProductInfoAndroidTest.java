@@ -5,7 +5,6 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import mobile.screens.android.DeviceLocationScreen;
 import mobile.screens.android.ProductSelectionScreen;
 import mobile.screens.android.StoreSelectionScreen;
 import org.junit.jupiter.api.DisplayName;
@@ -25,17 +24,13 @@ public class StoreAndProductInfoAndroidTest extends TestBaseMobile {
     private static final String SKU_MILK_ART = "Арт: 435450";
     public static final String SKU_MILK_LONG_NAME = "Молоко пастеризованное СЕВЕРНОЕ МОЛОКО Вологодское 3,2%, без змж, 1000г";
     private static final String STORE_ADDRESS_SPB = "Санкт-Петербург, Заневский пр., 71";
-    final DeviceLocationScreen deviceLocationScreen = new DeviceLocationScreen();
     final StoreSelectionScreen storeSelectionScreen = new StoreSelectionScreen();
     final ProductSelectionScreen catalogScreen = new ProductSelectionScreen();
 
     @Test
     @DisplayName("Успешный выбор магазин через строку поиска")
     @Severity(SeverityLevel.BLOCKER)
-    public void successfulSelectStoreFromSearchInputTest() throws InterruptedException {
-        deviceLocationScreen.clickPermissionAllowedButton();
-        Thread.sleep(5000);
-
+    public void successfulSelectStoreFromSearchInputTest() {
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
                 .shouldStoreSelection(STORE_ADDRESS_SPB);
@@ -44,10 +39,7 @@ public class StoreAndProductInfoAndroidTest extends TestBaseMobile {
     @Test
     @DisplayName("Успешный поиск товара через строку поиска")
     @Severity(SeverityLevel.BLOCKER)
-    public void successfulSelectSkuFromSearchInputTest() throws InterruptedException {
-        deviceLocationScreen.clickPermissionAllowedButton();
-        Thread.sleep(5000);
-
+    public void successfulSelectSkuFromSearchInputTest() {
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
                 .shouldStoreSelection(STORE_ADDRESS_SPB)
@@ -62,10 +54,7 @@ public class StoreAndProductInfoAndroidTest extends TestBaseMobile {
     @Test
     @DisplayName("Успешный выбор товара через строку поиска")
     @Severity(SeverityLevel.BLOCKER)
-    public void successfulSkuSelectionFromSearchInputTest() throws InterruptedException {
-        deviceLocationScreen.clickPermissionAllowedButton();
-        Thread.sleep(5000);
-
+    public void successfulSkuSelectionFromSearchInputTest() {
         storeSelectionScreen.clickEnterAddress()
                 .selectStore()
                 .shouldStoreSelection(STORE_ADDRESS_SPB)

@@ -30,4 +30,13 @@ public interface MobileConfig extends Config {
     @Key("isBrowserStackDevice")
     boolean isBrowserStackDevice();
 
+    @Key("browserStack.location")
+    String getBrowserStackLocation();
+
+    @Key("android.latitude")
+    double getAndroidLatitude();
+
+    @Key("android.longitude")
+    double getAndroidLongitude();
+
 }

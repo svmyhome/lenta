@@ -56,5 +56,4 @@ public class ProductSelectionScreen {
         return this;
     }
 
-
 }
