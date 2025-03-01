@@ -1,7 +1,6 @@
 package drivers;
 
 import com.codeborne.selenide.Configuration;
-import config.AuthConfig;
 import config.WebDriverConfig;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
@@ -9,20 +8,20 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-import static helpers.ProjectSettings.isRemoteStartWeb;
+import static config.AuthConfiguration.SELENOID_PASSWORD;
+import static config.AuthConfiguration.SELENOID_USER;
 
 public class CreateWebDriver {
-
+    private static boolean isRemoteStartWeb;
     public static void webDriverConfig() {
         WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+        isRemoteStartWeb = webDriverConfig.isRemoteStartWeb();
         RestAssured.baseURI = webDriverConfig.getApiUrl();
         Configuration.baseUrl = webDriverConfig.getBaseUrl();
         Configuration.browser = webDriverConfig.getBrowserName();
         Configuration.browserSize = webDriverConfig.getBrowserSize();
         if (isRemoteStartWeb) {
-            AuthConfig authConfig = ConfigFactory
-                    .create(AuthConfig.class, System.getProperties());
-            Configuration.remote = "https://" + authConfig.selenoidUser() + ":" + authConfig.selenoindPassword() + webDriverConfig.getRemoteUrl();
+            Configuration.remote = "https://" + SELENOID_USER + ":" + SELENOID_PASSWORD + webDriverConfig.getRemoteUrl();
             Configuration.browserVersion = webDriverConfig.getBrowserVersion();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -31,6 +30,10 @@ public class CreateWebDriver {
             ));
             Configuration.browserCapabilities = capabilities;
         }
+    }
+
+    public static boolean isRemoteStartWeb() {
+        return isRemoteStartWeb;
     }
 
 }

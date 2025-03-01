@@ -4,12 +4,18 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:config/web/${environmentType}.properties",
-        "classpath:config/web/local.properties"
+        "classpath:config/web/webLocal.properties"
 })
 public interface WebDriverConfig extends Config {
 
+    @Key("isRemoteStartWeb")
+    boolean isRemoteStartWeb();
+
     @Key("remote.url")
     String getRemoteUrl();
+
+    @Key("remote.videoUrl")
+    String getRemoteVideoUrl();
 
     @Key("webdriver.baseUrl")
     String getBaseUrl();

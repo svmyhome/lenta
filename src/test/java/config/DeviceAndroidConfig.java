@@ -9,11 +9,12 @@ import org.aeonbits.owner.Config;
         "classpath:config/local/android/redmi9A.properties"
 })
 public interface DeviceAndroidConfig extends Config {
+
+    @Key("isAndroid")
+    boolean isAndroid();
+
     @Key("android.app")
     String getApp();
-
-    @Key("android.localUrl")
-    String getLocalUrl();
 
     @Key("android.deviceName")
     String getDeviceName();
