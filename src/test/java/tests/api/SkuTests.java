@@ -1,31 +1,25 @@
 package tests.api;
 
-import helpers.ApiHelper;
+import api.ApiEnpoints;
+import api.ApiSteps;
+import api.models.sku.CatalogSearchRequest;
+import api.models.sku.SkuResponse;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Layer;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
-import models.api.sku.CatalogSearchRequest;
-import models.api.sku.SkuResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.TestBase;
+import qameta.allure.Layer;
 
+import static api.specifications.ApiSpecifications.requestSpecification;
+import static api.specifications.ApiSpecifications.statusCode200ResponseSpecification;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static models.api.ApiConstants.CATALOG_SEARCH;
-import static models.api.ApiConstants.NAME_VODKA_ARKHANGELSKAYA;
-import static models.api.ApiConstants.SKUS_NAME;
-import static models.api.ApiConstants.SKU_BREAD;
-import static models.api.ApiConstants.SKU_IDS;
-import static models.api.ApiConstants.SKU_VODKA_ARKHANGELSKAYA;
-import static specifications.ApiSpecifications.requestSpecification;
-import static specifications.ApiSpecifications.statusCode200ResponseSpecification;
 
 @Layer("rest")
 @Slf4j
@@ -34,8 +28,12 @@ import static specifications.ApiSpecifications.statusCode200ResponseSpecificatio
 @Owner("Sarychev")
 @Tag("api")
 @DisplayName("Информация о товарах")
-public class SkuTests extends TestBase {
-    final ApiHelper api = new ApiHelper();
+public class SkuTests extends TestBaseApi {
+    private static final String SKU_VODKA_ARKHANGELSKAYA = "354331";
+    private static final String NAME_VODKA_ARKHANGELSKAYA = "Водка АРХАНГЕЛЬСКАЯ Северная выдержка 40%, 0.5л";
+    private static final String SKU_BREAD = "хлеб";
+    private static final String SKU_IDS = "0177";
+    final ApiSteps api = new ApiSteps();
 
     @Test
     @DisplayName("Успешное получение данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA)
@@ -43,15 +41,15 @@ public class SkuTests extends TestBase {
     public void getSkuTest() {
         SkuResponse skuResponse = step("Успешный запрос данных товара по SKU: " + SKU_VODKA_ARKHANGELSKAYA, () ->
                 given(requestSpecification)
-                        .get(String.format(SKUS_NAME, SKU_VODKA_ARKHANGELSKAYA))
+                        .get(String.format(ApiEnpoints.SKUS_NAME, SKU_VODKA_ARKHANGELSKAYA))
                         .then()
                         .spec(statusCode200ResponseSpecification)
                         .extract().as(SkuResponse.class));
 
         step("SKU и название товара совпадают", () ->
         {
-            api.assertValues(skuResponse.code(), SKU_VODKA_ARKHANGELSKAYA)
-                    .assertValues(skuResponse.name(), NAME_VODKA_ARKHANGELSKAYA);
+            api.assertValues(SKU_VODKA_ARKHANGELSKAYA, skuResponse.code())
+                    .assertValues(NAME_VODKA_ARKHANGELSKAYA, skuResponse.name());
         });
     }
 
@@ -63,7 +61,7 @@ public class SkuTests extends TestBase {
         Response response = step("Успешный запрос данных о товаре", () ->
                 given(requestSpecification)
                         .when().body(catalogSearchRequest)
-                        .get(CATALOG_SEARCH + SKU_BREAD)
+                        .get(ApiEnpoints.CATALOG_SEARCH + SKU_BREAD)
                         .then()
                         .spec(statusCode200ResponseSpecification)
                         .extract().response());
